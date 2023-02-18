@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -11,10 +12,12 @@ using namespace std;
 //Notas alumnos con variables
 
 void menuPrincipal();
+void ingresoMaterias();
 void ingresarNombres();
 void ingresarNotas();
 int main()
 {
+
     menuPrincipal();
     return 0;
 }
@@ -45,29 +48,26 @@ void menuPrincipal()
 void ingresarNombres()
 {
     system("cls");
-    int i;
-    char primero [50], segundo[50],tercero[50],cuarto[50],quinto[50];
-    cout << "\tIngrese Nombres y Apellidos del Alumno" << endl;
-    cout << "\t1. ";
-    cin >> primero;
-    cin.getline(primero,50,'\n');
-    ingresarNotas();
-    cout << "\t2. ";
-    cin >> segundo;
-    cin.getline(segundo,50,'\n');
-    ingresarNotas();
-    cout << "\t3. ";
-    cin >> tercero;
-    cin.getline(tercero,50,'\n');
-    ingresarNotas();
-    cout << "\t4. ";
-    cin >> cuarto;
-    cin.getline(cuarto,50,'\n');
-    ingresarNotas();
-    cout << "\t5. ";
-    cin >> quinto;
-    cin.getline(quinto,50,'\n');
-    ingresarNotas();
+    const int CANTIDADNOMBRES = 5;
+    const int APELLIDOS = 5;
+    string nombres[CANTIDADNOMBRES];
+    string ape[APELLIDOS];
+    // Solicitar notas
+    for (int i = 0; i <=CANTIDADNOMBRES; i++)
+    {
+        cout << "-----------------------------------" << endl;
+        cout << setw(20) << "ALUMNO\n\n";
+        cout << "\t" << i + 1 << ". Nombre: ";
+        cin >> nombres[i];
+        for (int j=0; j<=APELLIDOS; j++)
+        {
+            cout << "\n" << setw(21) << "Apellido: ";
+            cin >> ape[j];
+            break;
+        }
+        cout << "\n";
+        ingresarNotas();
+    }
     system ("pause>nul");
 }
 void ingresarNotas()
@@ -83,7 +83,7 @@ void ingresarNotas()
         promedioFinal = promedioFinal + notas[i];
         promedioX = promedioFinal / 5;
     }
-    cout << "\t\tPromedio Final: " << promedioX << endl;
+    cout << "\n\t\tPromedio Final: " << promedioX << endl;
     if (promedioX >= 60)
     {
         cout << "\t\tAPROBADO" << endl;
