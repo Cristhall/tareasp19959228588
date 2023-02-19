@@ -1,5 +1,11 @@
 //Este ejemplo pretende mostrar el nivel de adaptación de C a C++, utilizando matrices o arreglos bidimensionales
+//Ingeniería en Sistemas de Información y Ciencias de la Computación
+//Catedrá: Programación 1
+//Catedrático: Ingeniero Estuardo del Águila
+//Alumna: Cristhall Mishell Rodríguez Ortiz
+//Carné: 9959 22 8588
 //Fecha de Creación: 16 de febrero 2023
+
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
@@ -7,12 +13,14 @@
 
 using namespace std;
 
+//Constantes
 const int NUMERO_ALUMNOS = 3;
 const int NUMERO_MATERIAS = 3;
 const int MAX_CALIFICACION = 100;
 const int MIN_CALIFICACION = 0;
 const int MAX_LONGITUD_CADENA = 100;
 
+//Definición de prototipos de función
 int busquedaAleatorios(int minimo, int maximo);
 void llenarMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1]);
 void imprimirLineaMatriz();
@@ -21,26 +29,26 @@ int main()
 {
     cout<<"\n";
     cout<<"\t\tControl de notas\n\n";
-    srand((unsigned)time(0));
-    float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1];
-    char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"VALERY", "DANIEL","CARLOS"};
+    srand((unsigned)time(0));  //Creación de números Random
+    float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1]; //Matrix de 3 x 4
+    char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"VALERY", "DANIEL","CARLOS"}; //Vector alumnos ya definido
     llenarMatriz(matriz);
     imprimirMatriz(matriz, alumnos);
 
     system ("pause");
     return 0;
 }
+//Implementación de funciones
 int busquedaAleatorios(int minimo, int maximo)
 {
     return minimo + (rand()%(MAX_CALIFICACION - MIN_CALIFICACION));
 }
 void llenarMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1])
 {
-    int y, x;
-    for (y=0; y < NUMERO_ALUMNOS; y++)
+    for (int y=0; y < NUMERO_ALUMNOS; y++)
     {
         float sumaNotasAlumno = 0;
-        for (x=0; x < NUMERO_MATERIAS; x++)
+        for ( int x=0; x < NUMERO_MATERIAS; x++)
         {
             int calificacionAlumno = busquedaAleatorios(MIN_CALIFICACION, MAX_CALIFICACION);
             sumaNotasAlumno += (float)calificacionAlumno;
@@ -50,7 +58,7 @@ void llenarMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1])
         matriz[y][NUMERO_MATERIAS]=promedioNotasAlumno;
     }
 }
-void imprimirLineaMatriz()
+void imprimirLineaMatriz() //Formato de separación de información
 {
     int x;
     cout << ("+--------------------");
@@ -63,7 +71,6 @@ void imprimirLineaMatriz()
 }
 void imprimirMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1], char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA])
 {
-    int y, x;
     float promedioMayor = matriz[0][NUMERO_MATERIAS];
     float promedioMenor = matriz[0][NUMERO_MATERIAS];
     char alumnoPromedioMayor[MAX_LONGITUD_CADENA];
@@ -73,19 +80,19 @@ void imprimirMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1], char alumno
     imprimirLineaMatriz();
     cout << setw(8) << "Alumno";
 
-    for (x=0; x < NUMERO_MATERIAS; x++)
+    for (int x=0; x < NUMERO_MATERIAS; x++)
     {
         cout << setw(7) << "Cal" << setw(4) << x + 1 << "!" ;
     }
     cout << setw(12) << "Promedio" << setw(3) <<"!\n";
 
     imprimirLineaMatriz();
-    for (y=0; y < NUMERO_ALUMNOS; y++)
+    for (int y=0; y < NUMERO_ALUMNOS; y++)
     {
         cout << setw(8) << alumnos[y];
 
         float suma = 0;
-        for (x=0;x < NUMERO_MATERIAS; x++)
+        for (int x=0;x < NUMERO_MATERIAS; x++)
             {
                 int calificacion = matriz[y][x];
                 cout <<  setw(11) << calificacion;
@@ -102,7 +109,7 @@ void imprimirMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1], char alumno
             promedioMenor = promedio;
             memcpy(alumnoPromedioMenor, alumnos[y], MAX_LONGITUD_CADENA);
         }
-        cout << setw(12) << fixed << setprecision(2) << promedio << setw(6) << "!\n";
+        cout << setw(13) << fixed << setprecision(2) << promedio << setw(5) << "!\n";
 
         imprimirLineaMatriz();
     }
