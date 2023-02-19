@@ -2,8 +2,12 @@
 //Ingeniería en Sistemas de Información y Ciencias de la Computación
 //Catedrá: Programación 1
 //Catedrático: Ingeniero Estuardo del Águila
-//Alumna: Cristhall Mishell Rodríguez Ortiz
-//Carné: 9959 22 8588
+//Grupo # 4
+//Equipo:
+//Maria Fernanda Martínes González 9959 22 7981
+//Melvin Alberto González Vésquez 9959 22 3148
+//Luis Alejandro Contreras Paredez 9959 22 473
+//Cristhall Mishell Rodríguez Ortiz 9959 22 8588
 //Fecha de Creación: 16 de febrero 2023
 
 #include <iostream>
