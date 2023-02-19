@@ -14,7 +14,7 @@
 using namespace std;
 
 //Constantes
-const int NUMERO_ALUMNOS = 3;
+const int NUMERO_ALUMNOS = 5;
 const int NUMERO_MATERIAS = 3;
 const int MAX_CALIFICACION = 100;
 const int MIN_CALIFICACION = 0;
@@ -31,7 +31,7 @@ int main()
     cout<<"\t\tControl de notas\n\n";
     srand((unsigned)time(0));  //Creación de números Random
     float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1]; //Matrix de 3 x 4
-    char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"VALERY", "DANIEL","CARLOS"}; //Vector alumnos ya definido
+    char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"VALERY", "DANIEL","CARLOS","MAX", "MARVIN"}; //Vector alumnos ya definido
     llenarMatriz(matriz);
     imprimirMatriz(matriz, alumnos);
 
