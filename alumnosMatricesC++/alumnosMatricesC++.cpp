@@ -64,14 +64,12 @@ void llenarMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1])
 }
 void imprimirLineaMatriz() //Formato de separación de información
 {
-    int x;
     cout << ("+--------------------");
-    for (x=0; x < NUMERO_MATERIAS + 1; x++)
+    for (int x=0; x < NUMERO_MATERIAS + 1; x++)
     {
         cout << "---------";
     }
     cout<< ("+\n");
-
 }
 void imprimirMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1], char alumnos[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA])
 {
@@ -95,7 +93,6 @@ void imprimirMatriz(float matriz[NUMERO_ALUMNOS][NUMERO_MATERIAS+1], char alumno
     {
         cout << setw(8) << alumnos[y];
 
-        float suma = 0;
         for (int x=0;x < NUMERO_MATERIAS; x++)
             {
                 int calificacion = matriz[y][x];
