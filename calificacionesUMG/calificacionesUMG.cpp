@@ -1,77 +1,92 @@
 #include <iostream>
-#include <string.h>
-#include <iomanip>
+#include <stdlib.h>
 #include <ctime>
-#include <conio.h>
+#include <iomanip>
+#include <string.h>
 
-const int CANTIDAD_NOMBRES = 5;
-const int CANTIDAD_MATERIAS = 5;
-const int MAX_LONGITUD_NOMBRES = 100;
-const int MAX CALIFICACION = 100;
-const int MIN_CALIFICACION = 0;
+using namespace std;
 
+// Constantes
+const int NUMERO_ALUMNOS = 5;
+const int NUMERO_MATERIAS = 5;
+
+// Vectores
+string alumnos[NUMERO_ALUMNOS];
+string materias[NUMERO_MATERIAS] = {"PROGRAMACIÓN_I","PROCESO_ADMINISTRATIVO","DERECHO_INFORMÁTICO","CÁLCULO_I","FÍSICA_I"};
+int notas[NUMERO_MATERIAS];
+
+// Funciones
 void menuPrincipal();
-int busquedaAleatorios(int minimo, int maximo);
-void ingresoDeNombres (float alumnos, CANTIDAD_NOMBRES);
-void ingresoDeMaterias(CANTIDAD_MATERIAS);
+void ingresoAlumnos();
+void ingresoCalificaciones();
+int promedio();
 
 int main()
 {
     menuPrincipal();
-    srand((unsigned)time(0));
-    float matriz[CANTIDAD_NOMBRES][CANTIDAD_MATERIAS+1];
-    char alumnos[CANTIDAD_NOMBRES][MAX_LONGITUD_NOMBRES];
-
-    getch();
+    system("pause");
     return 0;
 }
 void menuPrincipal()
 {
     int opciones;
-    bool repetir = true;
+    bool repetir = true; //Para que regrese a menú
     do
     {
         system("cls");
-        cout << "\n\n\t\t\tMENU CALIFICACIONES UMG" << endl;
-        cout << "\t\t\t----------------" << endl;
-        cout << "\t1. Ingreso de nombres" << endl;
-        cout << "\t2. Ingreso de materias" << endl;
-        cout << "\t3. SALIR" << endl;
+        cout << "\n\n\t\t\tCALIFICACIONES UMG" << endl;
+        cout << "\t\t-------------------------------\n\n";
+        cout << "\t1. INGRESO DE CALIFICACIONES" << endl;
+        cout << "\t2. SALIR" << endl;
         cout << "\n\tIngrese una opción: ";
         cin >> opciones;
         switch (opciones)
         {
         case 1:
-            ingresoDeNombres();
+            ingresoAlumnos();
             break;
-        case 2:
-            ingresoDeMaterias();
-            break;
-
-        case 3: repetir = false;
+        case 2: repetir = false;
                 break;
         }
     }while (repetir);
 }
-int busquedaAleatorios(int minimo, int maximo)
+void ingresoAlumnos()
 {
-    return minimo + (rand()%(MAX_CALIFICACION - MIN_CALIFICACION));
-}
-void ingresoDeNombres (float alumnos, CANTIDAD_NOMBRES)
-{
-    for (int i=0; i<=CANTIDAD_NOMBRES; i++)
+    system("cls");
+    for(int i = 0; i < NUMERO_ALUMNOS; i++)
     {
-        cout << "Escriba el nombre del alumno; " << endl;
-        cin >> alumnos[];
-        ingresoDeMaterias();
-    }break;
+        cout <<"\n\tIngrese el nombre del alumno: \n\t " <<  i + 1 << ".\t";
+        cin >> alumnos[i];
+        ingresoCalificaciones();
+        promedio();
+    }
+    system("pause>nul");
 }
-void ingresoDeMaterias(CANTIDAD_MATERIAS)
+void ingresoCalificaciones()
 {
-    for (int i=0; i<=CANTIDAD_MATERIAS; i++)
+    cout << "\n";
+    for(int i = 0; i < NUMERO_MATERIAS; i++)
     {
-        cout << "Escriba las materias: " << endl;
-        cin >> alumnos[];
-        busquedaAleatorios();
-    }break;
+        cout << "\tCalificación " << materias[i] << ": ";
+        cin >> notas[i];
+    }
+    system("pause>nul");
 }
+int promedio()
+{
+    int suma = 0, promedioTotal;
+    for (int i=0; i<=NUMERO_MATERIAS; i++)
+    {
+        suma += notas[i];
+    }
+    promedioTotal = suma / NUMERO_MATERIAS;
+    cout <<"\n\tPROMEDIO: " << promedioTotal << endl;
+    cout << "\t--------------------------" << endl;
+    return suma, promedioTotal;
+    system("pause>nul");
+}
+
+//Lectura de un vector:
+//int limite = (sizeof(edades)/sizeof(edades[0]));
+//for (int i = 0; i < limite; i++)
+//cout<<edades[i]<<endl;
