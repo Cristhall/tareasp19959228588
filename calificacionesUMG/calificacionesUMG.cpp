@@ -110,11 +110,7 @@ void primerParcial()
         {
             int numero = busquedaAleatorios(MIN_CALIFICACION, MAX_1P_CALIFICACION);
             notas[i] = numero;
-            matriz[0][0] = notas[0];
-            matriz[1][0] = notas[1];
-            matriz[2][0] = notas[2];
-            matriz[3][0] = notas[3];
-            matriz[4][0] = notas[4];
+            matriz[i][0] = notas[i];
         }
     }
 }
@@ -130,11 +126,7 @@ void segundoParcial()
         {
             int numero1 = busquedaAleatorios1(MIN_CALIFICACION, MAX_2P_CALIFICACION);
             notas1[i] = numero1;
-            matriz[0][1] = notas1[0];
-            matriz[1][1] = notas1[1];
-            matriz[2][1] = notas1[2];
-            matriz[3][1] = notas1[3];
-            matriz[4][1] = notas1[4];
+            matriz[i][1] = notas1[i];
         }
     }
 }
@@ -150,11 +142,7 @@ void tercerParcial()
         {
             int numero2 = busquedaAleatorios2(MIN_CALIFICACION, MAX_3P_CALIFICACION);
             notas2[i] = numero2;
-            matriz[0][2] = notas2[0];
-            matriz[1][2] = notas2[1];
-            matriz[2][2] = notas2[2];
-            matriz[3][2] = notas2[3];
-            matriz[4][2] = notas2[4];
+            matriz[i][2] = notas2[i];
         }
     }
 }
@@ -166,11 +154,7 @@ void actividades()
         {
             int numero3 = busquedaAleatorios(MIN_CALIFICACION, MAX_1P_CALIFICACION);
             acti[i] = numero3;
-            matriz[0][3] = acti[0];
-            matriz[1][3] = acti[1];
-            matriz[2][3] = acti[2];
-            matriz[3][3] = acti[3];
-            matriz[4][3] = acti[4];
+            matriz[i][3] = acti[i];
         }
     }
 }
@@ -188,11 +172,7 @@ void zona()
     {
         for(int x=0; x<1; x++)
         {
-            matriz[0][4] = sumaPorCurso[0];
-            matriz[1][4] = sumaPorCurso[1];
-            matriz[2][4] = sumaPorCurso[2];
-            matriz[3][4] = sumaPorCurso[3];
-            matriz[4][4] = sumaPorCurso[4];
+            matriz[i][4] = sumaPorCurso[i];
         }
     }
 }
