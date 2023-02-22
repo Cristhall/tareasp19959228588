@@ -1,3 +1,11 @@
+//En este programa se crea una matriz donde se impriman las calificaciones de UMG.
+//Califiaciones: primer, segundo y tercer parcial, actividades, zona y promedio.
+//Carrera: Ingeniería en Sistemas
+//Curso: Programación 1
+//Creador: Cristhall Mishell Rodríguez Ortiz
+//Carné: 9959 22 8588
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
@@ -35,7 +43,7 @@ void zona();
 void imprimirLineaMatriz();
 void imprimirMatriz(float matriz[NUMERO_ALUMNOS+1][NUMERO_MATERIAS+2]);
 
-// Vectores
+// Vectores y Matriz
 string alumnos[NUMERO_ALUMNOS]; //vector de los nombres de alumnos
 string materias[NUMERO_MATERIAS] = {"PROGRAMACION_I","PROCESO_ADMINISTRATIVO","DERECHO_INFORMATICO","CALCULO_I","FISICA_I"};
 int notas[NUMERO_MATERIAS]; //notas del primer parcial
@@ -81,6 +89,7 @@ void ingresoAlumnos()
     system("cls");
     for(int i = 0; i < NUMERO_ALUMNOS; i++)
     {
+        //Se le permite al usuario ingresar el nombre de los alumnos
         cout <<"\n\tIngrese el nombre del alumno: \n\t " <<  i + 1 << ".\t";
         cin >> alumnos[i];
         ingresoCalificaciones();
@@ -100,7 +109,7 @@ void ingresoCalificaciones()
 }
 int busquedaAleatorios(int minimo, int maximo)
 {
-    return minimo + (rand()%(MAX_1P_CALIFICACION - MIN_CALIFICACION));
+    return minimo + (rand()%(MAX_1P_CALIFICACION - MIN_CALIFICACION)); //Rango de 0 - 20 puntos
 }
 void primerParcial()
 {
@@ -109,14 +118,14 @@ void primerParcial()
         for (int x=0; x < 1; x++)
         {
             int numero = busquedaAleatorios(MIN_CALIFICACION, MAX_1P_CALIFICACION);
-            notas[i] = numero;
-            matriz[i][0] = notas[i];
+            notas[i] = numero; //Se agrega numeros Random al vector
+            matriz[i][0] = notas[i]; //Se agrega el vector del primer parcial a la matriz
         }
     }
 }
 int busquedaAleatorios1(int minimo, int maximo)
 {
-    return minimo + (rand()%(MAX_2P_CALIFICACION - MIN_CALIFICACION));
+    return minimo + (rand()%(MAX_2P_CALIFICACION - MIN_CALIFICACION)); //Rango de 0 - 25 puntos
 }
 void segundoParcial()
 {
@@ -125,14 +134,14 @@ void segundoParcial()
         for (int x=0; x < 1; x++)
         {
             int numero1 = busquedaAleatorios1(MIN_CALIFICACION, MAX_2P_CALIFICACION);
-            notas1[i] = numero1;
-            matriz[i][1] = notas1[i];
+            notas1[i] = numero1; //Se agrega los numeros Random al vector
+            matriz[i][1] = notas1[i]; //Se agrega el vector del segundo parcial a la matriz
         }
     }
 }
 int busquedaAleatorios2(int minimo, int maximo)
 {
-    return minimo + (rand()%(MAX_3P_CALIFICACION - MIN_CALIFICACION));
+    return minimo + (rand()%(MAX_3P_CALIFICACION - MIN_CALIFICACION)); //Rango de 0 - 35 puntos
 }
 void tercerParcial()
 {
@@ -141,8 +150,8 @@ void tercerParcial()
         for (int x=0; x < 1; x++)
         {
             int numero2 = busquedaAleatorios2(MIN_CALIFICACION, MAX_3P_CALIFICACION);
-            notas2[i] = numero2;
-            matriz[i][2] = notas2[i];
+            notas2[i] = numero2; //Se agregan los numeros random al vector.
+            matriz[i][2] = notas2[i]; //Se agrega el vector del tercer parcial a la matriz
         }
     }
 }
@@ -152,9 +161,9 @@ void actividades()
     {
         for (int x=0; x < 1; x++)
         {
-            int numero3 = busquedaAleatorios(MIN_CALIFICACION, MAX_1P_CALIFICACION);
-            acti[i] = numero3;
-            matriz[i][3] = acti[i];
+            int numero3 = busquedaAleatorios(MIN_CALIFICACION, MAX_1P_CALIFICACION); //Rango de 0 - 20 puntos
+            acti[i] = numero3; //Se incluyen los numeros random al vector
+            matriz[i][3] = acti[i]; //Se agrega el vector de actividades a la matriz
         }
     }
 }
@@ -162,6 +171,7 @@ void sumaIndividual()
 {
         for(int i=0; i<5; i++)
     {
+        //Suma de las calificaciones para encontrar la zona
         sumaPorCurso[i] = notas[i] + notas1[i] + notas2[i] + acti[i];
     }
 }
@@ -172,12 +182,13 @@ void zona()
     {
         for(int x=0; x<1; x++)
         {
-            matriz[i][4] = sumaPorCurso[i];
+            matriz[i][4] = sumaPorCurso[i]; //Se incluye loz valores de zona en la matriz
         }
     }
 }
 int promedioGeneral()
 {
+    //Calculo del promedio al sumar las zonas de todos los cursos
     float suma = 0, promedioTotal;
     for (int i=0; i<=NUMERO_MATERIAS; i++)
     {
@@ -186,6 +197,7 @@ int promedioGeneral()
         suma += notas2[i];
         suma += acti[i];
     }
+    //Impresion del promedio
     promedioTotal = suma / NUMERO_MATERIAS;
     cout <<"\n\tPROMEDIO: " << fixed << setprecision(2) << promedioTotal << endl;
     cout << "__________________________________" << endl << endl;
@@ -194,6 +206,7 @@ int promedioGeneral()
 }
 void imprimirLineaMatriz() //Formato de separación de información
 {
+    //Linea de separación para la matriz
     cout << ("+----------------------");
     for (int x=0; x < NUMERO_MATERIAS + 1; x++)
     {
@@ -220,7 +233,7 @@ void imprimirMatriz(float matriz[NUMERO_ALUMNOS+1][NUMERO_MATERIAS+2])
         for (int x=0;x < NUMERO_MATERIAS; x++)
             {
                 int calificacion = matriz[y][x];
-                cout << setw(6) << calificacion << setw(6) << "|";
+                cout << setw(6) << calificacion << setw(6) << "|"; //Se imprime completamente la matriz
             }
         cout << endl;
         imprimirLineaMatriz();
