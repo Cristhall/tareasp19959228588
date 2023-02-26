@@ -22,6 +22,7 @@ const int MIN_CALIFICACION = 0;
 const int MAX_2P_CALIFICACION = 25;
 const int MAX_3P_CALIFICACION = 35;
 const int NUMERO_FACULTADES = 3;
+const int MAX_LONGITUD_CADENA = 150;
 
 //Variables
 int suma2;
@@ -44,17 +45,17 @@ void imprimirLineaMatriz2();
 void imprimirMatrizIngenieria(float ingenieriaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1]);
 void imprimirMatrizAdmon(float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1]);
 void imprimirMatrizArquitectura(float arquitecturaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1]);
-void impresionResultadosTorneo();
-void promedioMayorIngenieria();
-void promedioMayorAdmon();
-void promedioMayorArquitectura();
 void promedioGeneralPorFacultad();
 void promedioGeneralUniversidad();
+void generalDeInge();
+void generalDeAdmon();
+void generalDeArqui();
+void impresionResultadoTorneo();
 
 // Vectores y Matrices
-string ingenieria[NUMERO_ALUMNOS] = {"JOSELINE_ORTIZ","DANIELA_HERNÁNDEZ","KARMEN_AGUILAR","DANIEL_GARCIA","MARIA_MORALES","JOSE_ORELLANA","LUIS_SALGUERO","ERWIN_LUZ","CARLOS_FUENTES","ADAN_CORTEZ"};
-string administracion[NUMERO_ALUMNOS] = {"MIGUEL_CASTILLO","ANGEL_CHACON","PABLO_PAZ","SOFIA_MELGAR","MISHELL_MAYEN","LESLI_ARIAS","ESTER_LOPEZ","JIMENA_CARDENAS","ROSA_MORALES","LUCIA_SOLIS"};
-string arquitectura[NUMERO_ALUMNOS] = {"MARTA_LOPEZ","YEIDEN_ALVARADO","KEIDEN_ALVARADO","DIEGO_CASTILLO","HEBER_DUBON","JULIA_CHUN","EVA_DIAZ","JOSUE_PÉREZ","PABLO_MANSILLA","LINDA_FLORES"};
+char ingenieria[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"JOSELINE_ORTIZ","DANIELA_HERNÁNDEZ","KARMEN_AGUILAR","DANIEL_GARCIA","MARIA_MORALES","JOSE_ORELLANA","LUIS_SALGUERO","ERWIN_LUZ","CARLOS_FUENTES","ADAN_CORTEZ"};
+char administracion[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"MIGUEL_CASTILLO","ANGEL_CHACON","PABLO_PAZ","SOFIA_MELGAR","MISHELL_MAYEN","LESLI_ARIAS","ESTER_LOPEZ","JIMENA_CARDENAS","ROSA_MORALES","LUCIA_SOLIS"};
+char arquitectura[NUMERO_ALUMNOS][MAX_LONGITUD_CADENA] = {"MARTA_LOPEZ","YEIDEN_ALVARADO","KEIDEN_ALVARADO","DIEGO_CASTILLO","HEBER_DUBON","JULIA_CHUN","EVA_DIAZ","JOSUE_PÉREZ","PABLO_MANSILLA","LINDA_FLORES"};
 int inge[NUMERO_ALUMNOS]; //notas del primer parcial
 int inge1[NUMERO_ALUMNOS];//notas del segundo parcial
 int inge2[NUMERO_ALUMNOS]; //notas del tercer parcial
@@ -69,6 +70,7 @@ int arqui[NUMERO_ALUMNOS];
 int arqui1[NUMERO_ALUMNOS];
 int arqui2[NUMERO_ALUMNOS];
 int acti2[NUMERO_ALUMNOS];
+int torneo[NUMERO_FACULTADES];
 int sumaArquitectura[NUMERO_ALUMNOS];
 float ingenieriaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1];  //Matriz de 11 x 6
 float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1];
@@ -111,15 +113,11 @@ void menuPrincipal()
                 imprimirMatrizAdmon(administracionMatriz);
                 imprimirMatrizArquitectura(arquitecturaMatriz);
                 cout << endl;
-                cout << "\t\tAlUMNO CON PROMEDIO MAYOR POR FACULTAD: " << endl << endl;
-                promedioMayorIngenieria();
-                promedioMayorAdmon();
-                promedioMayorArquitectura();
-                cout << endl;
                 cout << "\n\t\tPROMEDIO GENERAL POR FACULTAD: " << endl << endl;
                 promedioGeneralPorFacultad();
                 promedioGeneralUniversidad();
-                impresionResultadosTorneo();
+                impresionResultadoTorneo();
+                cout << endl;
                 imprimirLineaMatriz2();
                 cout << "\n\t¿Desea realizar otra prueba? \"1\" para continuar y \"2\" para salir: ";
                 cin >> a;
@@ -281,6 +279,7 @@ void imprimirMatrizIngenieria(float ingenieriaMatriz[NUMERO_ALUMNOS+1][NUMERO_AC
         cout << endl;
         imprimirLineaMatriz();
     }
+    generalDeInge();
     imprimirLineaMatriz2();
 }
 void imprimirMatrizAdmon(float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1])
@@ -308,6 +307,7 @@ void imprimirMatrizAdmon(float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACT
         cout << endl;
         imprimirLineaMatriz();
     }
+    generalDeAdmon();
     imprimirLineaMatriz2();
 }
 void imprimirMatrizArquitectura(float arquitecturaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1])
@@ -335,40 +335,8 @@ void imprimirMatrizArquitectura(float arquitecturaMatriz[NUMERO_ALUMNOS+1][NUMER
         cout << endl;
         imprimirLineaMatriz();
     }
+    generalDeArqui();
     imprimirLineaMatriz2();
-}
-void promedioMayorIngenieria()
-{
-    for (int i=0; i<NUMERO_ALUMNOS; i++)
-    {
-        if(sumaIngeniera[i] > mayor)
-        {
-            mayor = sumaIngeniera[i];
-        }
-    }
-    cout << "\t\tPromedio mayor de Ingenieria: " << fixed << setprecision(2) << mayor << endl;
-}
-void promedioMayorAdmon()
-{
-    for (int i=0; i<NUMERO_ALUMNOS; i++)
-    {
-        if(sumaAdmon[i] > mayor1)
-        {
-            mayor1 = sumaAdmon[i];
-        }
-    }
-    cout << "\t\tPromedio mayor de Administración: " << fixed << setprecision(2) << mayor1 << endl;
-}
-void promedioMayorArquitectura()
-{
-    for (int i=0; i<NUMERO_ALUMNOS; i++)
-    {
-        if(sumaArquitectura[i] > mayor2)
-        {
-            mayor2 = sumaArquitectura[i];
-        }
-    }
-    cout << "\t\tPromedio mayor de Arquitectura: " << fixed << setprecision(2) << mayor2 << endl;
 }
 void promedioGeneralPorFacultad()
 {
@@ -386,25 +354,84 @@ void promedioGeneralPorFacultad()
     cout << "\t\tPromedio General Facultad Administración: " << fixed << setprecision(2) << promedioGeneralAdmon << endl;
     cout << "\t\tPromedio General Facultad Arquitectura: " << fixed << setprecision(2) << promedioGeneralArqui << endl;
 }
-void impresionResultadosTorneo()
-{
-    if (promedioGeneralInge > promedioGeneralAdmon && promedioGeneralArqui)
-    {
-        cout << "\n\t\tLa facultad ganadora es: INGENIERIA con " << mayor << endl;
-    }
-    else if (promedioGeneralAdmon > promedioGeneralInge && promedioGeneralArqui)
-    {
-        cout << "\n\t\tLa facultad ganadora es: ADMINISTRACION con " << mayor1 << endl;
-    }
-    else if (promedioGeneralArqui > promedioGeneralInge && promedioGeneralAdmon)
-    {
-        cout << "\n\t\tLa facultad ganadora es: ARQUITECTURA con " << mayor2 << endl;
-    }
-}
 void promedioGeneralUniversidad()
 {
-    int promedioUniversidad = (promedioGeneralInge + promedioGeneralAdmon + promedioGeneralArqui) / 3;
+    float promedioUniversidad = (promedioGeneralInge + promedioGeneralAdmon + promedioGeneralArqui) / 3;
     cout << "\n\t\tEl promedio general de la universidad es de: " << fixed << setprecision(2) << promedioUniversidad << endl;
+}
+void generalDeInge()
+{
+    float mayor;
+    char alumnoPromedioMayor[MAX_LONGITUD_CADENA];
+    memcpy(alumnoPromedioMayor, ingenieria[0], MAX_LONGITUD_CADENA);
+    for (int i=0; i<NUMERO_ALUMNOS; i++)
+    {
+        if (sumaIngeniera[i] > mayor)
+        {
+            mayor = sumaIngeniera[i];
+            memcpy(alumnoPromedioMayor, ingenieria[i], MAX_LONGITUD_CADENA);
+            torneo[0] = mayor;
+        }
+    }
+    cout << "\n\t\tPromedio mayor: " << setw(9) << alumnoPromedioMayor << "  con " << mayor << endl;
+}
+void generalDeAdmon()
+{
+    float mayor1;
+    char alumnoPromedioMayor1[MAX_LONGITUD_CADENA];
+    memcpy(alumnoPromedioMayor1, administracion[0], MAX_LONGITUD_CADENA);
+    for (int i=0; i<NUMERO_ALUMNOS; i++)
+    {
+        if (sumaAdmon[i] > mayor1)
+        {
+            mayor1 = sumaAdmon[i];
+            memcpy(alumnoPromedioMayor1, administracion[i], MAX_LONGITUD_CADENA);
+            torneo[1] = mayor1;
+        }
+    }
+    cout << "\n\t\tPromedio mayor: " << setw(9) << alumnoPromedioMayor1 << "  con " << mayor1 << endl;
+}
+void generalDeArqui()
+{
+    float mayor2;
+    char alumnoPromedioMayor2[MAX_LONGITUD_CADENA];
+    memcpy(alumnoPromedioMayor2, arquitectura[0], MAX_LONGITUD_CADENA);
+    for (int i=0; i<NUMERO_ALUMNOS; i++)
+    {
+        if (sumaArquitectura[i] > mayor2)
+        {
+            mayor2 = sumaArquitectura[i];
+            memcpy(alumnoPromedioMayor2, arquitectura[i], MAX_LONGITUD_CADENA);
+            torneo[2] = mayor2;
+        }
+    }
+    cout << "\n\t\tPromedio mayor: " << setw(9) << alumnoPromedioMayor2 << "  con " << mayor2 << endl;
+}
+void impresionResultadoTorneo()
+{
+    cout << "\n\t\t------ Facultad ganadora según las notas de los alumnos con nota más alta" << endl;
+    if (torneo[0] > torneo[1])
+    {
+        if (torneo[1] > torneo[2])
+        {
+            cout << "\n\t\tFACULTAD GANADORA: INGENIERIA con " << torneo[0] << endl;
+        }
+        else
+        {
+            cout << "\n\t\tFACULTAD GANADORA: ARQUITECTURA con " << torneo[2] << endl;
+        }
+    }
+    else
+    {
+        if (torneo[1] > torneo[2])
+        {
+            cout << "\n\t\tFACULTAD GANADORA: ADMINISTRACION con " << torneo[1] << endl;
+        }
+        else
+        {
+            cout << "\n\t\tFACULTAD GANADORA: ARQUITECTURA con " << torneo[2] << endl;
+        }
+    }
 }
 
 //Lectura de un vector:
