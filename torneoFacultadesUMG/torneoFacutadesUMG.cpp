@@ -25,7 +25,8 @@ const int NUMERO_FACULTADES = 3;
 
 //Variables
 int suma2;
-
+float promedioGeneralInge, promedioGeneralAdmon, promedioGeneralArqui;
+int mayor, mayor1, mayor2;
 
 // Funciones
 void menuPrincipal();
@@ -50,7 +51,7 @@ void promedioMayorArquitectura();
 void promedioGeneralPorFacultad();
 void promedioGeneralUniversidad();
 
-// Vectores y Matriz
+// Vectores y Matrices
 string ingenieria[NUMERO_ALUMNOS] = {"JOSELINE_ORTIZ","DANIELA_HERNÁNDEZ","KARMEN_AGUILAR","DANIEL_GARCIA","MARIA_MORALES","JOSE_ORELLANA","LUIS_SALGUERO","ERWIN_LUZ","CARLOS_FUENTES","ADAN_CORTEZ"};
 string administracion[NUMERO_ALUMNOS] = {"MIGUEL_CASTILLO","ANGEL_CHACON","PABLO_PAZ","SOFIA_MELGAR","MISHELL_MAYEN","LESLI_ARIAS","ESTER_LOPEZ","JIMENA_CARDENAS","ROSA_MORALES","LUCIA_SOLIS"};
 string arquitectura[NUMERO_ALUMNOS] = {"MARTA_LOPEZ","YEIDEN_ALVARADO","KEIDEN_ALVARADO","DIEGO_CASTILLO","HEBER_DUBON","JULIA_CHUN","EVA_DIAZ","JOSUE_PÉREZ","PABLO_MANSILLA","LINDA_FLORES"};
@@ -72,8 +73,6 @@ int sumaArquitectura[NUMERO_ALUMNOS];
 float ingenieriaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1];  //Matriz de 11 x 6
 float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1];
 float arquitecturaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1];
-float promedioGeneralInge, promedioGeneralAdmon, promedioGeneralArqui;
-int mayor, mayor1, mayor2;
 
 
 int main()
