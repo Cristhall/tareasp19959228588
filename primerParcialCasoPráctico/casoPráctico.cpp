@@ -284,7 +284,7 @@ void imprimirMatrizIngenieria(float ingenieriaMatriz[NUMERO_ALUMNOS+1][NUMERO_AC
 }
 void imprimirMatrizAdmon(float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1])
 {
-    cout << endl << "\t\t\t\tFACULTAD DE ADMINISTRACION\n" << endl;
+    cout << endl << "\t\t\t\tLIGA METROPOLITANA\n" << endl;
     imprimirLineaMatriz();
     cout << setw(20) << "EQUIPO" << setw(10) << "|" << setw(5);
 
@@ -311,7 +311,7 @@ void imprimirMatrizAdmon(float administracionMatriz[NUMERO_ALUMNOS+1][NUMERO_ACT
 }
 void imprimirMatrizArquitectura(float arquitecturaMatriz[NUMERO_ALUMNOS+1][NUMERO_ACTIVIDADES+1])
 {
-    cout << endl << "\t\t\t\tFACULTAD DE ARQUITECTURA\n" << endl;
+    cout << endl << "\t\t\t\tLIGA PRIMERA DIVISION\n" << endl;
     imprimirLineaMatriz();
     cout << setw(20) << "EQUIPO" << setw(10) << "|" << setw(5);
 
