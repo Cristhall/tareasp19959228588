@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1678415310 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\primerparcialcasopractico\ prototipop11p2023\src\competencia.cpp
+	"competencia.h"
+
+1678415225 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\primerparcialcasopractico\ prototipop11p2023\include\competencia.h
+	<iostream>
+	<stdlib.h>
+	<ctime>
+	<iomanip>
+	<string.h>
+
+1678415240 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\primerparcialcasopractico\ prototipop11p2023\main.cpp
+	<iostream>
+	"competencia.h"
+
