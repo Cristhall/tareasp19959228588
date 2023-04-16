@@ -1,123 +1,135 @@
-#include "Juego.h" //liberia donde se encuentra la clase, sus atributos y funciones
-#include <fstream> //libreria para trabajar con archivos
+#include "Juego.h"
+#include <fstream>
 #include <unistd.h>
 
-int Juego::aleatorio_en_rango(int minimo, int maximo) //funcion que permitira agregar valores de manera aletaria
+int Juego::aleatorio_en_rango(int minimo, int maximo)
 	{
-		return minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1); //operacion que permite el ingreso de numeros aleatorios
+		return minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
 	}
 
-	int Juego::filaAleatoria() //Llamada al atributo de filas
+	int Juego::filaAleatoria()
 	{
-		//Retorna el valor de cantidad de filas a la altura del tablero.
 		return this->aleatorio_en_rango(0, this->tablero.getAlturaTablero() - 1);
 	}
 
-	int Juego::columnaAleatoria()  //Llamada al atributo de columnas
+	int Juego::columnaAleatoria()
 	{
-		//Retorna el valor de cantidad de columnas al ancho del tablero.
 		return this->aleatorio_en_rango(0, this->tablero.getAnchoTablero() - 1);
 	}
 
-	Juego::Juego(Tablero tablero, int cantidadMinas) //Funcion que llama a la clase mina y la cantidad de minas que se indicaron
+	Juego::Juego(Tablero tablero, int cantidadMinas)
 	{
-		this->tablero = tablero; //permite trabajar con la clase tablero y asi transferirle valores
-		this->cantidadMinas = cantidadMinas; //establece la cantidad de minas, basado en la cantidad de minas
-		this->colocarMinasAleatoriamente(); //llamado a la funcion de colocar minas de forma aleatoria
+		this->tablero = tablero;
+		this->cantidadMinas = cantidadMinas;
+		this->colocarMinasAleatoriamente();
 	}
 
-	void Juego::colocarMinasAleatoriamente() //Llama a la funcion para poder colocar las minas en el tablero
+	void Juego::colocarMinasAleatoriamente()
 	{
-		int x, y, minasColocadas = 0; //varibles que guardan la posicion de la mina y un contador que lleva la cantidad de minas colocadas
+		int x, y, minasColocadas = 0;
 
-		while (minasColocadas < this->cantidadMinas) //ciclo que se repetira hasta que se coloquen las minas indicadas en la configuracion
+		while (minasColocadas < this->cantidadMinas)
 		{
-			//se coloca una mina en un parametro aleatorio dentro del tablero
 			x = this->columnaAleatoria();
 			y = this->filaAleatoria();
-			//condicional que permitira el conteo de minas colocadas, asi no habran errores de colocar diferente cantidad de minas a las indicadas.
 			if (this->tablero.colocarMina(x, y))
 			{
-				minasColocadas++; //contador de las minas colocadas
+				minasColocadas++;
 			}
 		}
 	}
 
-	int Juego::solicitarFilaUsuario() //Funcion que permite ingresar la fila en que se jugara
+	int Juego::solicitarFilaUsuario()
 	{
 		int fila = 0;
 		cout << "Ingresa la FILA en la que desea jugar: ";
 		cin >> fila;
-		return fila - 1; //Retorna - 1 debido a que tiene que quitar los encabezados
+		return fila - 1;
 	}
 
-	int Juego::solicitarColumnaUsuario() //Funcion que permite ingresar la columna en que se jugara
+	int Juego::solicitarColumnaUsuario()
 	{
 		int columna = 0;
 		cout << "Ingresa la COLUMNA en la que desea jugar: ";
 		cin >> columna;
-		return columna - 1; //Retorna - 1 debido a que tiene que quitar los encabezados
+		return columna - 1;
 	}
 
 	bool Juego::jugadorGana()
 	{
-		int conteo = this->tablero.contarCeldasSinMinasYSinDescubrir(); //permite guardar contar las celdas que han sido encontradas y que no tienen mina
+		int conteo = this->tablero.contarCeldasSinMinasYSinDescubrir();
 		if (conteo == 0)
 		{
-			return true; //El juego continua
+			return true;
 		}
 		else
 		{
-			return false; //Si la celda descubierta tiene una mina el juego termina
+			return false;
 		}
 	}
 
 	void Juego::iniciar()
 	{
-		int fila, columna; //Varibales donde se guardara la fila y columna ingresada
+		int fila, columna;
+		int puntos = 0;
 		while (true)
 		{
-			this->tablero.imprimir(); //Llamado a la clase tablero
-			fila = this->solicitarFilaUsuario(); //llamada a la fila que se ingreso
-			columna = this->solicitarColumnaUsuario(); //llamada a la columna que se ingreso
-			bool respuestaAUsuario = this->tablero.descubrirMina(columna, fila); //llamada al tablero para descubrir lo que tiene la celda
-			//impresion de resultados, le dice al jugador si gano o perdio
+			system ("cls");
+			cout << "\n\tvidas: " << VIDASTABLERO << endl;
+			cout << "\tPuntos: " << puntos << endl << endl;
+			this->tablero.imprimir();
+			fila = this->solicitarFilaUsuario();
+			columna = this->solicitarColumnaUsuario();
+			bool respuestaAUsuario = this->tablero.descubrirMina(columna, fila);
+			this -> VIDASTABLERO = VIDASTABLERO;
 			if (!respuestaAUsuario)
 			{
-				cout << "Perdiste el Juego\n"; //Le manda un mensaje
-				this->tablero.setModoDesarrollador(true);  //se cambia a true el modo desarrollador para ver con respuestas el tablero
-				this->tablero.imprimir(); //Se imprime nuevamente el tablero para que el jugador ve en donde estaba las otras minas y las zonas seguras
-				break; //termina y se sale
+				VIDASTABLERO--;
+				puntos = puntos - 5;
+			}
+			if (VIDASTABLERO == 0)
+            {
+				system("cls");
+				cout << "\n\tPerdiste el Juego\n";
+				puntos = puntos + 5;
+				cout<<"\tObtuviste: "<<puntos<<" puntos "<<endl;
+				this->tablero.setModoDesarrollador(true);
+				this->tablero.imprimir();
+				break;
 			}
 
 			if (this->jugadorGana())
 			{
-				cout << "Ganaste el Juego\n"; //manda un mensaje de que gano
-				this->tablero.setModoDesarrollador(true); //se cambia a true el modo desarrollador para ver con respuestas el tablero
-				this->tablero.imprimir(); //se imprime nuevamente el tablero para mostrarle al jugador donde estaban las minas
-				break; //termina y se sale
+				system("cls");
+				puntos = puntos + 5;
+				cout << "\n\tGanaste el Juego\n";
+				cout<<"\tObtuviste: "<<puntos<<" puntos "<<endl;
+				this->tablero.setModoDesarrollador(true);
+				this->tablero.imprimir();
+				break;
+
 			}
+			puntos+=5;
 		}
 	}
-	void Juego::dibujarPortada(string nombreArchivo) //Se llama a la función de portada
+
+	void Juego::dibujarPortada(string nombreArchivo)
 	{
         string line;
         //char userInput = ' ';
-        ifstream myFile(nombreArchivo); //Archivo que contiene la portada
-        if(myFile.is_open()) //Condicional que permite abrir o no la portada
+        ifstream myFile(nombreArchivo);
+        if(myFile.is_open())
         {
             //Se obtiene la portada del juego
-            //Se va imprimiendo linea por linea del archivo hasta completar el juego
             while( getline(myFile, line))
             {
-                cout << line << endl; //impresion de cada linea del archivo
+                cout << line << endl;
             }
-            myFile.close(); //cierre del archivo al terminar de imprimirlo
+            myFile.close();
             system("pause");
         }
         else
         {
-            //Mensaje que aparece si la portada no se pudo abrir
             cout << "Error FATAL: el archivo de portada no pudo ser cargado" << endl;
             system("pause");
         }

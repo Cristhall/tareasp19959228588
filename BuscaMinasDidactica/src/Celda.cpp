@@ -1,27 +1,27 @@
 #include "Celda.h"
 #include <iostream>
 using namespace std;
-Celda::Celda() //Iniciamos el constructor
+Celda::Celda()
 {
 }
-Celda::Celda(int coordenadaX, int coordenadaY, bool estadoMina) //Enviamos lo que son los parametros en dirección al contructor. Las coordenadas aunque se llamen casi igual, no son lo mismo
-{
-    this->coordenadaX = coordenadaX; // this sirve para referenciar la clase que se esta trabajando en ese momento
-    this->coordenadaY = coordenadaY; // -> apunta a una clase
-    this->mina = estadoMina; //Guardamos el contenido de la variable
-    this->minaDescubierta = false;
-}
-int Celda::setCoordenadaX(int coordenadaX) //Con set almacenamos los datos
+Celda::Celda(int coordenadaX, int coordenadaY, bool estadoMina)
 {
     this->coordenadaX = coordenadaX;
-} //Con estos gets y sets accedemos y cambiamos los valores internos de la clase
-int Celda::getCoordenadaX() //Se llama al valor de la coordenada X con get
+    this->coordenadaY = coordenadaY;
+    this->mina = estadoMina;
+    this->minaDescubierta = false;
+}
+int Celda::setCoordenadaX(int coordenadaX)
 {
-    return this->coordenadaX; //Con esta instrucción retornamos el valor de la cordenada X
+    this->coordenadaX = coordenadaX;
+}
+int Celda::getCoordenadaX()
+{
+    return this->coordenadaX;
 }
 int Celda::setCoordenadaY(int coordenadaY)
 {
-    this->coordenadaY = coordenadaY; //Se guardan los datos en memoria
+    this->coordenadaY = coordenadaY;
 }
 int Celda::getCoordenadaY()
 {
@@ -29,12 +29,12 @@ int Celda::getCoordenadaY()
 }
 bool Celda::setMina(bool estadoMina)
 {
-    if (this->getMina()) //Se hace un comparativo
+    if (this->getMina())
     {
         return false;
     }
     else{
-        this->mina = estadoMina; //Pasamos el valor si es verdadero o falso
+        this->mina = estadoMina;
         return true;
     }
 }
@@ -52,5 +52,7 @@ bool Celda::getMinaDescubierta()
 }
 void Celda::imprimirCelda()
 {
-    cout << "Celda en " << this->coordenadaX << ", " << this->coordenadaY << "con mina? " << this->mina << "\n"; //Se imprime en pantalla el mensaje con una pregunta
+    cout << "Celda en " << this->coordenadaX << ", " << this->coordenadaY << " con mina? " << this->mina << "\n";
 }
+
+

@@ -3,14 +3,12 @@
 #include "Config.h"
 using namespace std;
 
-Config::Config(int filasTablero, int columnasTablero, int minasTablero, bool modoDesarrolladorTablero, int vidasTablero) //  Se llama la clase config y se crean los 5 parametros
+Config::Config(int filasTablero, int columnasTablero, int minasTablero, bool modoDesarrolladorTablero)
 {
-    //  this-> distingue entre los parámetros y los atributos con el mismo nombre.
     this->filasTablero = filasTablero;
     this->columnasTablero = columnasTablero;
     this->minasTablero = minasTablero;
     this->modoDesarrolladorTablero = modoDesarrolladorTablero;
-    this->vidasTablero = vidasTablero;
 }
 void Config::menuConfiguracion()
 {
@@ -22,19 +20,14 @@ void Config::menuConfiguracion()
         system("cls");
         cout << "\n\n\t\tCONFIGURACION ACTUAL -Menu-" << endl;
         cout << "\t\t-------------------"<< endl;
-
-        //permite modificar el número de filas del tablero, y muestra el valor actual de filas del tablero utilizando la función get()
         cout << "\t\t1. Filas del Tablero ----> " << this->getfilasTablero() << endl;
         cout << "\t\t2. Columnas del Tablero -> " << this->getcolumnasTablero() << endl;
-        cout << "\t\t3. Minas del Tablero ----> " << this->getminasTablero() << endl;
-        cout << "\t\t4. Modo del Juego -------> " << this->getmodoDesarrolladorTablero() << endl;
-        cout << "\t\t5. Vidas del Jugador ----> " << this->getvidasTablero() << endl;
-        cout << "\t\t6. Regresar al menu general" << endl;
+        cout << "\t\t3. Minas del Tablero ----> " << this->getminasTablero()<< " (DIFICIL= 5+ / INTERMEDIO= 2-4 / FACIL= 1) "  << endl;
+        cout << "\t\t4. Modo del Juego -------> " << this->getmodoDesarrolladorTablero()<<endl;
+        cout << "\t\t5. Regresar al menu general" << endl;
         cout << "\n\t\tIngrese una opcion: ";
         cin >> opciones;
-
-        // Segun lo que el usuario seleccione el programa actualizara los datos
-        if (opciones!=6)
+        if (opciones!=5)
         {
             cout << "\n\tIngrese el valor que desea cambiar: ";
             cin >> valorIngresado;
@@ -65,13 +58,7 @@ void Config::menuConfiguracion()
                 cout << "Modo del Juego actualizado" << endl;
                 break;
             }
-        case 5:
-            {
-                this->setvidasTablero(valorIngresado);
-                cout << "Vidas del Juego actualizadas" << endl;
-                break;
-            }
-        case 6: repetir = false;
+        case 5: repetir = false;
                 break;
         }
         system("pause");
@@ -79,41 +66,33 @@ void Config::menuConfiguracion()
 }
 int Config::getfilasTablero()
 {
-    return this->filasTablero; // Devuelve el valor actual del atributo filasTablero
+    return this->filasTablero;
 }
 int Config::setfilasTablero(int filasTablero)
 {
-    this->filasTablero=filasTablero; //establece el valor del atributo filasTablero con el valor pasado como parámetro filasTablero.
+    this->filasTablero=filasTablero;
 }
 int Config::getcolumnasTablero()
 {
-    return this->columnasTablero; // Devuelve el valor actual del atributo columnasTablero
+    return this->columnasTablero;
 }
 int Config::setcolumnasTablero(int columnasTablero)
 {
-    this->columnasTablero=columnasTablero; //establece el valor del atributo columnasTablero con el valor pasado como parámetro columnasTablero.
+    this->columnasTablero=columnasTablero;
 }
 int Config::getminasTablero()
 {
-    return this->minasTablero; // Devuelve el valor actual del atributo minasTablero
+    return this->minasTablero;
 }
 int Config::setminasTablero(int minasTablero)
 {
-    this->minasTablero=minasTablero; //establece el valor del atributo minasTablero con el valor pasado como parámetro minasTablero.
+    this->minasTablero=minasTablero;
 }
 bool Config::getmodoDesarrolladorTablero()
 {
-    return this->modoDesarrolladorTablero; // Devuelve el valor actual del atributo mododesarrolladorTablero
+    return this->modoDesarrolladorTablero;
 }
 bool Config::setmodoDesarrolladorTablero(bool modoDesarrolladorTablero)
 {
-    this->modoDesarrolladorTablero=modoDesarrolladorTablero; //establece el valor del atributo mododesarrolladorTablero con el valor pasado como parámetro mododesarrolladorTablero.
-}
-int Config::getvidasTablero()
-{
-    return this->vidasTablero;// Devuelve el valor actual del atributo vidasTablero
-}
-int Config::setvidasTablero(int vidasTablero)
-{
-    this->vidasTablero=vidasTablero; //establece el valor del atributo vidasTablero con el valor pasado como parámetro vidasTablero.
+    this->modoDesarrolladorTablero=modoDesarrolladorTablero;
 }

@@ -1,0 +1,6 @@
+vale           1234           
+juan           5252           
+luna           2020           
+carmen         3030           
+carlos         0000           
+jorge          5555           

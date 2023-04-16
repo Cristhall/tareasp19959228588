@@ -38,11 +38,13 @@
 		<Unit filename="include/Config.h" />
 		<Unit filename="include/Juego.h" />
 		<Unit filename="include/Tablero.h" />
+		<Unit filename="include/Usuario.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Celda.cpp" />
 		<Unit filename="src/Config.cpp" />
 		<Unit filename="src/Juego.cpp" />
 		<Unit filename="src/Tablero.cpp" />
+		<Unit filename="src/Usuario.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
