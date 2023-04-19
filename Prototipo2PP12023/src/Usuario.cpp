@@ -140,7 +140,36 @@ void Usuario::menuCRUD()
 }
 void Usuario::menuReportes()
 {
-
+    system("cls");
+	fstream file;
+	int total=0;
+	cout<<"\n-------------------------Tabla de Detalles de Personas -------------------------"<<endl;
+	file.open("nombresUsuarios.txt",ios::in);
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay información...";
+		file.close();
+	}
+	else
+	{
+		file >> nombre >> contrasena >> fecha >> direccion >> telefono;
+		while(!file.eof())
+		{
+			total++;
+			cout<<"\n\n\t\t\t Usuario: "<<nombre<<endl;
+			cout<<"\t\t\t Contrasena: "<<contrasena<<endl;
+			cout<<"\t\t\t Fecha de nacimiento: "<<fecha<<endl;
+			cout<<"\t\t\t Direccion usuario: "<<direccion<<endl;
+			cout<<"\t\t\t Telefono usuario: "<<telefono<<endl << endl;
+			file >> nombre >> contrasena >> fecha >> direccion >> telefono;
+		}
+		if(total==0)
+		{
+			cout<<"\n\t\t\tNo hay informacion...";
+		}
+	}
+	system ("pause");
+	file.close();
 }
 void Usuario::altas()
 {
@@ -217,7 +246,7 @@ void Usuario::consultas()
 	{
 		string name;
 		cout<<"\n-------------------------Datos de Persona buscada------------------------"<<endl;
-		cout<<"\nIngrese el usuarios: ";
+		cout<<"\n\t\tIngrese el usuario a buscar: ";
 		cin>>name;
 		file >> nombre >> contrasena >> fecha >> direccion >> telefono;
 		while(!file.eof())
@@ -225,9 +254,10 @@ void Usuario::consultas()
 			if(name==nombre)
 			{
 				cout<<"\n\n\t\t\t Usuario: "<<nombre<<endl;
+				cout<<"\t\t\t Contrasena: "<<contrasena<<endl;
 				cout<<"\t\t\t Fecha nacimiento: "<<fecha<<endl;
 				cout<<"\t\t\t Direccion: "<<direccion<<endl;
-				cout<<"\t\t\t Teléfono: "<<telefono<<endl;
+				cout<<"\t\t\t Teléfono: "<<telefono<<endl << endl;
 				found++;
 			}
 			file >> nombre >> contrasena >> fecha >> direccion >> telefono;
