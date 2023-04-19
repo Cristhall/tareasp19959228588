@@ -50,7 +50,7 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 		cin>>nameUsuario;
 		cout << "\t\tContraseña: "; //solicita contraseña
 		cin >> codigo;
-		file >> nombre >> contrasena; //indica el orden del archivo
+		file >> nombre >> contrasena >> fecha >> direccion >> telefono; //indica el orden del archivo
 		while(!file.eof()) //ciclo que permite buscar al usuario
 		{
 			if(nameUsuario == nombre && codigo == contrasena) //condicional que dice que el usuario y la contraseña deben ser el mismo
@@ -58,7 +58,7 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 				found++; //si el nombre o usuario no son correctos el contador aumenta
 				menuGeneral();
 			}
-			file >> nombre >> contrasena; //se ordena el archivo
+			file >> nombre >> contrasena >> fecha >> direccion >> telefono; //se ordena el archivo
 		}
 		if(found==0) //si el contador es mayor a 0 es porque no se encuentra el usuario
 		{
