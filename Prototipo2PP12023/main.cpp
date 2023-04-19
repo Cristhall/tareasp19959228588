@@ -1,3 +1,7 @@
+//Creador: Cristhall Msihell Rodríguez Ortiz
+//Carné: 9959 22 8588
+//Carrera: Ingeniería en Sistemas de Información y Ciencias de la Computación
+
 #include <iostream>
 #include "Usuario.h"
 

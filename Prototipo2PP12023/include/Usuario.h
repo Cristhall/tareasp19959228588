@@ -17,7 +17,10 @@ class Usuario
 		void insertar(); //funcion para ingresar usuario
 		void menuReportes();
 		void menuGeneral();
-
+		void altas();
+		void bajas();
+		void modificacion();
+		void consultas();
 };
 
 

@@ -88,9 +88,61 @@ void Usuario::menuGeneral()
 }
 void Usuario::menuCRUD()
 {
-
+    int opcion;
+    do{
+        system("cls"); //se limpia la pantalla
+        cout<<"\n---------------------------------------------------------------------------------------------------";
+        cout<<"\n---------------------------------------------- CATÁLOGOS ------------------------------------------"<<endl;
+        cout << "\n\n\t\tUsuario: " << nombre << endl << endl; //imprime el nombre dle usuario que esta jugando
+        //opciones para realizar determinada accion
+        cout << "\t\t1. Altas" << endl;
+        cout << "\t\t2. Bajas" << endl;
+        cout << "\t\t3. Modificacion" << endl;
+        cout << "\t\t4. Consulta" << endl;
+        cout << "\t\t5. Regresar a menú" << endl;
+        cout<<"\t\t-------------------------------"<<endl;
+        cout << "\t\tIngrese una opción: "; //se solicita la opcion
+        cin >> opcion; //se guarda la opcion
+            switch(opcion) //inicio de cilo swith para las acciones a tomar dependiendo de la opcion ingresada
+            {
+                case 1:
+                    altas();
+                    break;
+                case 2:
+                    bajas();
+                    break;
+                case 3:
+                    modificacion();
+                    break;
+                case 4:
+                    consultas();
+                    break;
+                case 5:
+                    return; //regresa al menu de inicio de sesion
+                default:
+                    cout << "\n\t\tOpcion inválida" << endl; //mensaje si la opcion ingresada no se encuentra
+                    system("pause");
+                    break;
+            }
+        }while(opcion!=5); //fin del ciclo hasta que seleccione la opcion de salir
 }
 void Usuario::menuReportes()
+{
+
+}
+void Usuario::altas()
+{
+
+}
+void Usuario::bajas()
+{
+
+}
+void Usuario::modificacion()
+{
+
+}
+void Usuario::consultas()
 {
 
 }
