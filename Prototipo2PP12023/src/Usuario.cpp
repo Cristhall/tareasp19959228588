@@ -45,11 +45,6 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 			{
 				found++; //si el nombre o usuario no son correctos el contador aumenta
 			}
-			else{
-                if (nameUsuario == ADMINISTRADOR && codigo == CONTRASENAADMON){
-                    found++;
-                }
-			}
 			file >> nombre >> contrasena; //se ordena el archivo
 		}
 		if(found==0) //si el contador es mayor a 0 es porque no se encuentra el usuario
