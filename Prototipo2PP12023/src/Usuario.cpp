@@ -44,6 +44,7 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 			if(nameUsuario == nombre && codigo == contrasena) //condicional que dice que el usuario y la contraseña deben ser el mismo
 			{
 				found++; //si el nombre o usuario no son correctos el contador aumenta
+				menuGeneral();
 			}
 			file >> nombre >> contrasena; //se ordena el archivo
 		}
@@ -52,4 +53,44 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 			cout<<"\n\t\t\t El usuario o contraseña sin incorrectos...";
 		}
 		file.close(); //se cierra el archivo
+}
+void Usuario::menuGeneral()
+{
+    int opcion;
+    do{
+        system("cls"); //se limpia la pantalla
+        cout<<"\n----------------------------------------------------------------------------------------------------";
+        cout<<"\n---------------------------------------------- BIENVENIDO ------------------------------------------"<<endl;
+        cout << "\n\n\t\tUsuario: " << nombre << endl << endl; //imprime el nombre dle usuario que esta jugando
+        //opciones para realizar determinada accion
+        cout << "\t\t1. Catálogos" << endl;
+        cout << "\t\t2. Informes" << endl;
+        cout << "\t\t3. Cerrar Sesion" << endl;
+        cout<<"\t\t-------------------------------"<<endl;
+        cout << "\t\tIngrese una opción: "; //se solicita la opcion
+        cin >> opcion; //se guarda la opcion
+            switch(opcion) //inicio de cilo swith para las acciones a tomar dependiendo de la opcion ingresada
+            {
+                case 1:
+                    menuCRUD();
+                    break;
+                case 2:
+                    menuReportes();
+                    break;
+                case 3:
+                    return; //regresa al menu de inicio de sesion
+                default:
+                    cout << "\n\t\tOpcion inválida" << endl; //mensaje si la opcion ingresada no se encuentra
+                    system("pause");
+                    break;
+            }
+        }while(opcion!=3); //fin del ciclo hasta que seleccione la opcion de salir
+}
+void Usuario::menuCRUD()
+{
+
+}
+void Usuario::menuReportes()
+{
+
 }

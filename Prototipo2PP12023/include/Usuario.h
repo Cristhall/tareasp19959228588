@@ -13,9 +13,10 @@ class Usuario
 		string nombre, contrasena; //atributos de la clase usuario
 	public:
 		void iniciarSesion(); //funcion para iniciar sesion
-		void menuCRUD(); //funcion de menu secudario para modificaciones
-		void insertar(); // funcion para insertar o crear un usuario
-		void menuReportes(); //funcion para modificar al usuario
+		void menuCRUD();
+		void insertar(); //funcion para ingresar usuario
+		void menuReportes();
+		void menuGeneral();
 
 };
 
