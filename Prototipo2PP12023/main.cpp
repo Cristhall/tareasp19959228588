@@ -1,9 +1,11 @@
 #include <iostream>
+#include "Usuario.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    Usuario inicio;
+    inicio.iniciarSesion();
     return 0;
 }
