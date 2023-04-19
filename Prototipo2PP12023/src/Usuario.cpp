@@ -13,16 +13,22 @@ using namespace std;
 void Usuario::insertar() //funcion para crear usuario
 {
 	system("cls");
-	fstream file; //libreria para trabajar con un archivo
+	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-	cout<<"\n-------------------------------------------------- Agregar Nuevo Usuario -----------------------------------------------"<<endl;
-	cout<<"\n\t\t\tIngresa el nombre de Usuario: "; //se solicita el usuario
+	cout<<"\n-------------------------------------------------Agregar detalles Persona ---------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa Nombre: ";
 	cin>>nombre;
-	cout<<"\t\t\tIngresa la contraseña: "; //se solicita la contraseña
+	cout<<"\t\t\tIngresa contraseña: ";
 	cin>>contrasena;
-	file.open("nombresUsuarios.txt", ios::app | ios::out); //se abre o crea el archivo
-	file<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena << "\n"; //se guarda informacion en el archivo
-	file.close(); //se cierra el archivo
+	cout<<"\t\t\tIngresa fecha de nacimiento (sin espacios): ";
+	cin>>fecha;
+	cout<<"\t\t\tIngresa direccion: ";
+	cin>>direccion;
+	cout<<"\t\t\tIngresa telefono: ";
+	cin>>telefono;
+	file.open("nombresUsuarios.txt", ios::app | ios::out);
+	file<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena <<std::left<<std::setw(15)<< fecha <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< telefono << "\n";
+	file.close();
 }
 void Usuario::iniciarSesion() //funcion para iniciar sesion
 {
@@ -32,6 +38,12 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 	string nameUsuario;
 	int found=0; //contador y varible opcion para respuesta
 	file.open("nombresUsuarios.txt",ios::in); //se abre el archivo
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay ningun usuario registrado...";
+		file.close();
+	}
+    else{
 		cout<<"\n----------------------------------------------------------------------------------------------------------------";
         cout<<"\n--------------------------------------------------- Iniciar Sesion ---------------------------------------------"<<endl;
 		cout<<"\n\t\tUsuario: "; //solicita usuario
@@ -52,7 +64,8 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 		{
 			cout<<"\n\t\t\t El usuario o contraseña sin incorrectos...";
 		}
-		file.close(); //se cierra el archivo
+    }
+    file.close(); //se cierra el archivo
 }
 void Usuario::menuGeneral()
 {
@@ -62,7 +75,6 @@ void Usuario::menuGeneral()
         cout<<"\n----------------------------------------------------------------------------------------------------";
         cout<<"\n---------------------------------------------- BIENVENIDO ------------------------------------------"<<endl;
         cout << "\n\n\t\tUsuario: " << nombre << endl << endl; //imprime el nombre dle usuario que esta jugando
-        //opciones para realizar determinada accion
         cout << "\t\t1. Catálogos" << endl;
         cout << "\t\t2. Informes" << endl;
         cout << "\t\t3. Cerrar Sesion" << endl;
@@ -132,17 +144,99 @@ void Usuario::menuReportes()
 }
 void Usuario::altas()
 {
-
+    cout << "\n\n\t\tAÚN NO HAY INFORMACIÓN DISPONIBLE\n\n";
+    system ("pause");
 }
 void Usuario::bajas()
 {
-
+    cout << "\n\n\t\tAÚN NO HAY INFORMACIÓN DISPONIBLE\n\n";
+    system ("pause");
 }
 void Usuario::modificacion()
 {
+    system("cls");
+	fstream file,file1;
+	string name;
+	int found=0;
+	cout<<"\n-------------------------Modificacion Detalles Persona-------------------------"<<endl;
+	file.open("nombresUsuarios.txt",ios::in);
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay informacion..,";
+		file.close();
+	}
+	else
+	{
+		cout<<"\n\t\tIngrese el nombre del usuario a modificar: ";
+		cin>>name;
+		file1.open("Record.txt",ios::app | ios::out);
+		file >> nombre >> contrasena >> fecha >> direccion >> telefono;
+		while(!file.eof())
+		{
+			if(name!=nombre)
+			{
+			 file1<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena <<std::left<<std::setw(15)<< fecha <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< telefono << "\n";
+			}
+			else
+			{
+				cout<<"\t\t\tIngresa Nombre: ";
+                cin>>nombre;
+                cout<<"\t\t\tIngresa contraseña: ";
+                cin>>contrasena;
+                cout<<"\t\t\tIngresa fecha de nacimiento (sin espacios): ";
+                cin>>fecha;
+                cout<<"\t\t\tIngresa direccion: ";
+                cin>>direccion;
+                cout<<"\t\t\tIngresa telefono: ";
+                cin>>telefono;
+				file1<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena <<std::left<<std::setw(15)<< fecha <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< telefono << "\n";
+				found++;
+			}
+			file >> nombre >> contrasena >> fecha >> direccion >> telefono;
 
+		}
+		system ("pause");
+		file1.close();
+		file.close();
+		remove("nombresUsuarios.txt");
+		rename("Record.txt","nombresUsuarios.txt");
+	}
 }
 void Usuario::consultas()
 {
-
+    system("cls");
+	fstream file;
+	int found=0;
+	file.open("nombresUsuarios.txt",ios::in);
+	if(!file)
+	{
+		cout<<"\n-------------------------Datos de la Persona buscada------------------------"<<endl;
+		cout<<"\n\t\t\tNo hay informacion...";
+	}
+	else
+	{
+		string name;
+		cout<<"\n-------------------------Datos de Persona buscada------------------------"<<endl;
+		cout<<"\nIngrese el usuarios: ";
+		cin>>name;
+		file >> nombre >> contrasena >> fecha >> direccion >> telefono;
+		while(!file.eof())
+		{
+			if(name==nombre)
+			{
+				cout<<"\n\n\t\t\t Usuario: "<<nombre<<endl;
+				cout<<"\t\t\t Fecha nacimiento: "<<fecha<<endl;
+				cout<<"\t\t\t Direccion: "<<direccion<<endl;
+				cout<<"\t\t\t Teléfono: "<<telefono<<endl;
+				found++;
+			}
+			file >> nombre >> contrasena >> fecha >> direccion >> telefono;
+		}
+		if(found==0)
+		{
+			cout<<"\n\t\t\t Persona no encontrada...";
+		}
+		system("pause");
+		file.close();
+	}
 }

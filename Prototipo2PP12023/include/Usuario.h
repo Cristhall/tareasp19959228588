@@ -10,7 +10,7 @@ using namespace std;
 class Usuario
 {
 	private:
-		string nombre, contrasena; //atributos de la clase usuario
+		string nombre, contrasena, fecha, direccion, telefono; //atributos de la clase usuario
 	public:
 		void iniciarSesion(); //funcion para iniciar sesion
 		void menuCRUD();
