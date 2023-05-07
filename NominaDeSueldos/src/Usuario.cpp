@@ -7,7 +7,8 @@
 #include<cstdlib>
 #include<conio.h>
 #include<iomanip>
-#include <vector>
+#include <ctime>
+
 using namespace std;
 #define ADMINISTRADOR "administrador"
 #define CONTRAADMON "1234"
@@ -17,18 +18,25 @@ Empleados funcionEmpleados;
 void Usuario::iniciarSesion()
 {
     system("cls");
-	fstream file;
+	fstream file, file1;
 	int found=0;
 	file.open("nombresUsuarios.txt",ios::in);
+	file1.open("Bitacora.txt", ios::app | ios::out);
 	cout<<"\n----------------------------------------------------------------------------------------------------------------";
     cout<<"\n--------------------------------------------------- Iniciar Sesion ---------------------------------------------"<<endl;
     cout<<"\n\t\tUsuario: ";
     cin>>nameUsuario;
-    cout << "\t\tContrase�a: ";
+    cout << "\t\tContrasena: ";
     cin >> codigo;
     file >> nombre >> contrasena;
+    nombre2 = nameUsuario;
+    time_t now = time(0);
+    date_time = ctime(&now);
     if(nameUsuario==nombre && codigo == contrasena)
         {
+            accion = "LOGIN";
+            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time << "\n";
+            file1.close();
             funcionEmpleados.menuGeneralEmpleados();
             return;
             found++;
@@ -37,6 +45,9 @@ void Usuario::iniciarSesion()
     {
         if (nameUsuario==ADMINISTRADOR && codigo==CONTRAADMON)
         {
+            accion = "LOGIN";
+            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+            file1.close();
             funcionAdmon.menuGeneralSTAFF();
             return;
             found++;
@@ -45,6 +56,9 @@ void Usuario::iniciarSesion()
     file >> nombre >> contrasena;
     if(found==0)
     {
+        accion = "NO LOGIN";
+        file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time << "\n";
+        file1.close();
         cout<<"\n\t\t\t El usuario o contraseña sin incorrectos..." << endl;
         system("pause");
     }
@@ -53,15 +67,22 @@ void Usuario::iniciarSesion()
 void Usuario::insertar()//creamos la funcion que permite crear usuarios
 {
 	system("cls");
-	fstream file;
+	fstream file, file1;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------- Agregar Nuevo Usuario -----------------------------------------------"<<endl;
 	cout<<"\n\t\t\tIngresa el nombre de Usuario: ";
 	cin>>nombre;
-	cout<<"\t\t\tIngresa la contrase�a: ";
+	cout<<"\t\t\tIngresa la contraseña: ";
 	cin>>contrasena;
 	file.open("nombresUsuarios.txt", ios::app | ios::out);
+	file1.open("Bitacora.txt", ios::app);
+	nombre2 = nameUsuario;
+	accion = "Ins";
+	time_t now = time(0);
+    date_time = ctime(&now);
+	file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
 	file<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena<< "\n";
+	file1.close();
 	file.close();
 }
 void Usuario::menuSecundario()

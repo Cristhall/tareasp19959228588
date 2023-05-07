@@ -5,15 +5,17 @@ using namespace std;
 class Usuario
 {
 	private:
-		string nombre, contrasena ;
+		string nombre, contrasena;
+		string nombre2, accion;
+		char* date_time;
 	public:
-		void iniciarSesion();//trae las funciones que inician el juego
+		void iniciarSesion();
 		void iniciarSesionSTAFF();
-		void menuSecundario();//se obtiene la funcion de usuarios
-		void insertar();//nos permite colocar los valores ingresados para el usuario
-		void modificar();//atrae la funcion que permite hacer cambios al documento de texto con los usuarios
-		void borrar();//permite invocar la funcion para eliminar datos en el usuario
-		void cambioScore (int valScore);//realiza la sumatoria de los puntos y permite acumular puntos
+		void menuSecundario();
+		void insertar();
+		void modificar();
+		void borrar();
+		void cambioScore (int valScore);
 
 };
 
