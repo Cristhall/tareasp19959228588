@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1683494719 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\main.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	"Usuario.h"
+
+1683492388 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
+	<iostream>
+
+1683494765 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
+	"Usuario.h"
+	"Administracion.h"
+	"Empleados.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<vector>
+
+1683489480 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\login.cpp
+	"Login.h"
+
+1683489515 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\login.h
+	<iostream>
+
+1683492429 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
+	"Administracion.h"
+	"Usuario.h"
+
+1683492408 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
+
+1683494500 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
+
+1683494507 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
+	"Empleados.h"
+	"Usuario.h"
+

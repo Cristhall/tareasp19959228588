@@ -7,9 +7,10 @@
 #include<iomanip>
 #include <string>
 using namespace std;
-#define ADMINISTRADOR 'cristhall'
-#define CONTRASENAADMON 1234
-
+#define ADMINISTRADOR "cristhall"
+#define CONTRASENAADMON "1234"
+string codigo;
+string nameUsuario;
 void Usuario::insertar() //funcion para crear usuario
 {
 	system("cls");
@@ -34,36 +35,33 @@ void Usuario::iniciarSesion() //funcion para iniciar sesion
 {
     system("cls"); //limpia la pantalla
 	fstream file; //libreria para trabajar con un archivo
-	string codigo;
-	string nameUsuario;
 	int found=0; //contador y varible opcion para respuesta
 	file.open("nombresUsuarios.txt",ios::in); //se abre el archivo
-	if(!file)
-	{
-		cout<<"\n\t\t\tNo hay ningun usuario registrado...";
-		file.close();
-	}
-    else{
-		cout<<"\n----------------------------------------------------------------------------------------------------------------";
-        cout<<"\n--------------------------------------------------- Iniciar Sesion ---------------------------------------------"<<endl;
-		cout<<"\n\t\tUsuario: "; //solicita usuario
-		cin>>nameUsuario;
-		cout << "\t\tContraseña: "; //solicita contraseña
-		cin >> codigo;
-		file >> nombre >> contrasena >> fecha >> direccion >> telefono; //indica el orden del archivo
-		while(!file.eof()) //ciclo que permite buscar al usuario
-		{
-			if(nameUsuario == nombre && codigo == contrasena) //condicional que dice que el usuario y la contraseña deben ser el mismo
-			{
-				found++; //si el nombre o usuario no son correctos el contador aumenta
-				menuGeneral();
-			}
-			file >> nombre >> contrasena >> fecha >> direccion >> telefono; //se ordena el archivo
-		}
-		if(found==0) //si el contador es mayor a 0 es porque no se encuentra el usuario
-		{
-			cout<<"\n\t\t\t El usuario o contraseña sin incorrectos...";
-		}
+    cout<<"\n----------------------------------------------------------------------------------------------------------------";
+    cout<<"\n--------------------------------------------------- Iniciar Sesion ---------------------------------------------"<<endl;
+    cout<<"\n\t\tUsuario: "; //solicita usuario
+    cin>>nameUsuario;
+    cout << "\t\tContraseña: "; //solicita contraseña
+    cin >> codigo;
+    file >> nombre >> contrasena >> fecha >> direccion >> telefono; //indica el orden del archivo
+    while(!file.eof()) //ciclo que permite buscar al usuario
+    {
+        if(nameUsuario == nombre && codigo == contrasena) //condicional que dice que el usuario y la contraseña deben ser el mismo
+        {
+            found++; //si el nombre o usuario no son correctos el contador aumenta
+            menuGeneral();
+        }
+        else{
+            if(nameUsuario==ADMINISTRADOR && codigo == CONTRASENAADMON){
+            found++; //si el nombre o usuario no son correctos el contador aumenta
+            menuGeneral();
+            }
+        }
+        file >> nombre >> contrasena >> fecha >> direccion >> telefono; //se ordena el archivo
+    }
+    if(found==0) //si el contador es mayor a 0 es porque no se encuentra el usuario
+    {
+        cout<<"\n\t\t\t El usuario o contraseña sin incorrectos...";
     }
     file.close(); //se cierra el archivo
 }
@@ -74,7 +72,7 @@ void Usuario::menuGeneral()
         system("cls"); //se limpia la pantalla
         cout<<"\n----------------------------------------------------------------------------------------------------";
         cout<<"\n---------------------------------------------- BIENVENIDO ------------------------------------------"<<endl;
-        cout << "\n\n\t\tUsuario: " << nombre << endl << endl; //imprime el nombre dle usuario que esta jugando
+        cout << "\n\n\t\tUsuario: " << nameUsuario << endl << endl; //imprime el nombre dle usuario que esta jugando
         cout << "\t\t1. Catálogos" << endl;
         cout << "\t\t2. Informes" << endl;
         cout << "\t\t3. Cerrar Sesion" << endl;
@@ -105,8 +103,6 @@ void Usuario::menuCRUD()
         system("cls"); //se limpia la pantalla
         cout<<"\n---------------------------------------------------------------------------------------------------";
         cout<<"\n---------------------------------------------- CATÁLOGOS ------------------------------------------"<<endl;
-        cout << "\n\n\t\tUsuario: " << nombre << endl << endl; //imprime el nombre dle usuario que esta jugando
-        //opciones para realizar determinada accion
         cout << "\t\t1. Altas" << endl;
         cout << "\t\t2. Bajas" << endl;
         cout << "\t\t3. Modificacion" << endl;
@@ -210,6 +206,7 @@ void Usuario::modificacion()
 			{
 				cout<<"\t\t\tIngresa Nombre: ";
                 cin>>nombre;
+                nombre == nameUsuario;
                 cout<<"\t\t\tIngresa contraseña: ";
                 cin>>contrasena;
                 cout<<"\t\t\tIngresa fecha de nacimiento (sin espacios): ";
