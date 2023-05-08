@@ -37,7 +37,7 @@ void Usuario::iniciarSesion()
             accion = "LOGIN";
             file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
             file1.close();
-            funcionEmpleados.menuGeneralEmpleados();
+            funcionEmpleados.menuGeneralEmpleados(nombre2);
             return;
             found++;
         }

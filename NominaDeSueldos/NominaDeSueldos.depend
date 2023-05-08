@@ -12,7 +12,7 @@
 1683500130 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
 	<iostream>
 
-1683522235 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
+1683523571 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
 	"Usuario.h"
 	"Administracion.h"
 	"Empleados.h"
@@ -30,7 +30,7 @@
 1683489515 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\login.h
 	<iostream>
 
-1683521661 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
+1683522247 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
 	"Administracion.h"
 	"Usuario.h"
 	<ctime>
@@ -40,9 +40,13 @@
 1683522083 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
 	<iostream>
 
-1683494500 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
+1683523538 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
+	<iostream>
 
-1683494507 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
+1683523550 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
 	"Empleados.h"
 	"Usuario.h"
+	<ctime>
+	<fstream>
+	<iomanip>
 
