@@ -1,2 +1,6 @@
 administrador       LOGIN          Sun May 07 16:56:46 2023
 administrador       Ins            Sun May 07 16:56:57 2023
+cris                NO LOGIN       Sun May 07 21:43:33 2023
+
+administrador       LOGIN          Sun May 07 22:54:36 2023
+administrador       RDE            Sun May 07 22:54:38 2023

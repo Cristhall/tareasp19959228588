@@ -35,7 +35,7 @@ void Usuario::iniciarSesion()
     if(nameUsuario==nombre && codigo == contrasena)
         {
             accion = "LOGIN";
-            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time << "\n";
+            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
             file1.close();
             funcionEmpleados.menuGeneralEmpleados();
             return;
@@ -48,7 +48,7 @@ void Usuario::iniciarSesion()
             accion = "LOGIN";
             file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
             file1.close();
-            funcionAdmon.menuGeneralSTAFF();
+            funcionAdmon.menuGeneralSTAFF(nameUsuario);
             return;
             found++;
         }
@@ -57,7 +57,7 @@ void Usuario::iniciarSesion()
     if(found==0)
     {
         accion = "NO LOGIN";
-        file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time << "\n";
+        file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
         file1.close();
         cout<<"\n\t\t\t El usuario o contraseña sin incorrectos..." << endl;
         system("pause");
@@ -128,7 +128,7 @@ void Usuario::modificar()
 	file.open("nombresUsuarios.txt",ios::in);
 	cout<<"\n Ingrese su nombre de usuario: ";
     cin>>name;
-    cout<<" Ingrese la contrase�a: ";
+    cout<<" Ingrese la contraseña: ";
     cin>>c2;
     file1.open("Record.txt",ios::app | ios::out);
     file >> nombre >> contrasena;
@@ -140,7 +140,7 @@ void Usuario::modificar()
         else{
             cout << "\n\tQue desea modificar?" << endl;
             cout << "\t1. Usuario" << endl;
-            cout << "\t2. Contrase�a" << endl;
+            cout << "\t2. Contraseña" << endl;
             cout << "\tIngrese una opcion" << endl;
             cin >> opcion;
             if (opcion == 1){

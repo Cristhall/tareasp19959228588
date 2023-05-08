@@ -1,12 +1,14 @@
 #include "Administracion.h"
 #include "Usuario.h"
-
-void Administracion::menuGeneralSTAFF()
+#include <ctime>
+#include <fstream>
+#include <iomanip>
+void Administracion::menuGeneralSTAFF(string n)
 {
     system("cls");
     int choice1;
     Usuario ingresoUsuario;
-
+    nombre2 = n;
 	do
     {
 	system("cls");
@@ -19,7 +21,7 @@ void Administracion::menuGeneralSTAFF()
 	cout<<"\t\t\t 4). Crear Usuarios"<<endl;
 	cout<<"\t\t\t 5). Modificar Usuarios"<<endl;
 	cout<<"\t\t\t 6). LOG OUT"<<endl;
-		cout<<"\t\t\t-------------------------------"<<endl;
+    cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5-6 "<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tIngresa tu Opcion: ";
@@ -28,13 +30,13 @@ void Administracion::menuGeneralSTAFF()
     switch(choice1)
     {
     case 1:
-        infopersonalSTAFF();
+        infopersonalSTAFF(nombre2);
 		break;
 	case 2:
-	    procesoSTAFF();
+	    procesoSTAFF(nombre2);
 		break;
 	case 3:
-	    infomesSTAFF();
+	    infomesSTAFF(nombre2);
 		break;
 	case 4:
 	    ingresoUsuario.insertar();
@@ -51,8 +53,13 @@ void Administracion::menuGeneralSTAFF()
 	system("cls");
     }while(choice1!= 6);
 }
-void Administracion::infopersonalSTAFF()
+void Administracion::infopersonalSTAFF(string n)
 {
+    fstream file1;
+    file1.open("Bitacora.txt", ios::app);
+    nombre2 = n;
+    time_t now = time(0);
+    date_time = ctime(&now);
     int choice;
     //int x;
     do {
@@ -74,19 +81,26 @@ void Administracion::infopersonalSTAFF()
         switch(choice)
         {
             case 1:
-
+                accion = "RDE";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 2:
-
+                accion = "RDP";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 3:
-
+                accion = "RDEA";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 4:
-
+                accion = "RDR";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 5:
-
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
@@ -94,10 +108,14 @@ void Administracion::infopersonalSTAFF()
         }
     }while(choice!= 5);
 }
-void Administracion::procesoSTAFF()
+void Administracion::procesoSTAFF(string n)
 {
+    fstream file1;
+    file1.open("Bitacora.txt", ios::app);
+    nombre2 = n;
+    time_t now = time(0);
+    date_time = ctime(&now);
     int choice;
-
     do {
 	system("cls");
 	cout<<"\t\t\t-----------------------------------------------"<<endl;
@@ -117,19 +135,26 @@ void Administracion::procesoSTAFF()
         switch(choice)
         {
             case 1:
-
+                accion = "INS O DEL AD";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 2:
-
+                accion = "UPDP";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 3:
-
+                accion = "RO";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 4:
-
+                accion = "ERE";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 5:
-
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
@@ -137,10 +162,14 @@ void Administracion::procesoSTAFF()
         }
     }while(choice!= 5);
 }
-void Administracion::infomesSTAFF()
+void Administracion::infomesSTAFF(string n)
 {
+    fstream file1;
+    file1.open("Bitacora.txt", ios::app);
+    nombre2 = n;
+    time_t now = time(0);
+    date_time = ctime(&now);
     int choice;
-
     do {
 	system("cls");
 	cout<<"\t\t\t-----------------------------------------------"<<endl;
@@ -160,19 +189,26 @@ void Administracion::infomesSTAFF()
         switch(choice)
         {
             case 1:
-
+                accion = "APE";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 2:
-
+                accion = "AHE";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 3:
-
+                accion = "RHL";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 4:
-
+                accion = "EOT";
+                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+                file1.close();
                 break;
             case 5:
-
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";

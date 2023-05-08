@@ -1,15 +1,17 @@
 #ifndef ADMINISTRACION_H
 #define ADMINISTRACION_H
-
+#include <iostream>
+using namespace std;
 
 class Administracion
 {
     public:
-        void menuGeneralSTAFF();
-        void infopersonalSTAFF();
-        void procesoSTAFF();
-        void infomesSTAFF();
+        void menuGeneralSTAFF(string n);
+        void infopersonalSTAFF(string n);
+        void procesoSTAFF(string n);
+        void infomesSTAFF(string n);
     private:
+        string nombre2, accion, date_time;
 };
 
 #endif // ADMINISTRACION_H
