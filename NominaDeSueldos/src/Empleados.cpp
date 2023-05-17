@@ -1,12 +1,14 @@
 #include "Empleados.h"
 #include "Usuario.h"
+#include "Bitacora.h"
 #include <ctime>
 #include <fstream>
 #include <iomanip>
+Bitacora llamarBitacora3;
 void Empleados::menuGeneralEmpleados(string n)
 {
     system("cls");
-    nombre2 = n;
+    nombre = n;
     int choice2;
 	do
     {
@@ -27,13 +29,13 @@ void Empleados::menuGeneralEmpleados(string n)
         switch(choice2)
         {
             case 1:
-                infopersonalEmpleados(nombre2);
+                infopersonalEmpleados(nombre);
                 break;
             case 2:
-                procesoEmpleados(nombre2);
+                procesoEmpleados(nombre);
                 break;
             case 3:
-                informesEmpleados(nombre2);
+                informesEmpleados(nombre);
                 break;
             case 4:
                 break;
@@ -46,17 +48,13 @@ void Empleados::menuGeneralEmpleados(string n)
 }
 void Empleados::infopersonalEmpleados(string n)
 {
-    fstream file1;
-    file1.open("Bitacora.txt", ios::app);
-    nombre2 = n;
-    time_t now = time(0);
-    date_time = ctime(&now);
+    nombre = n;
     int choice;
     do {
 	system("cls");
-	cout<<"\t\t\t----------------------------------------------------------"<<endl;
-	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados - Informacion personal laboral  |"<<endl;
-	cout<<"\t\t\t----------------------------------------------------------"<<endl;
+	cout<<"\t\t\t--------------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados - Informacion personal laboral - 900 |"<<endl;
+	cout<<"\t\t\t--------------------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Informacion Personal "<<endl;
 	cout<<"\t\t\t 2. Puesto en la empresa "<<endl;
 	cout<<"\t\t\t 3. Procesos Diciplinarios "<<endl;
@@ -71,27 +69,18 @@ void Empleados::infopersonalEmpleados(string n)
         switch(choice)
         {
             case 1:
-                accion = "RIE";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"900", "RIP");
                 break;
             case 2:
-                accion = "RPE";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"900", "RPE");
                 break;
             case 3:
-                accion = "RPD";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"900", "RPD");
                 break;
             case 4:
-                accion = "RR";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"900", "RR");
                 break;
             case 5:
-
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
@@ -101,17 +90,13 @@ void Empleados::infopersonalEmpleados(string n)
 }
 void Empleados::procesoEmpleados(string n)
 {
-    fstream file1;
-    file1.open("Bitacora.txt", ios::app);
-    nombre2 = n;
-    time_t now = time(0);
-    date_time = ctime(&now);
+    nombre = n;
     int choice;
     do {
 	system("cls");
-	cout<<"\t\t\t-----------------------------------------------"<<endl;
-	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Proceso   |"<<endl;
-	cout<<"\t\t\t-----------------------------------------------"<<endl;
+	cout<<"\t\t\t---------------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Proceso - 1000  |"<<endl;
+	cout<<"\t\t\t---------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Solicitar nuevo puesto "<<endl;
 	cout<<"\t\t\t 2. Revisar procesos diciplinarios "<<endl;
 	cout<<"\t\t\t 3. Solicitar horas extras "<<endl;
@@ -126,29 +111,18 @@ void Empleados::procesoEmpleados(string n)
         switch(choice)
         {
             case 1:
-                accion = "SNP";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1000", "SNP");
                 break;
             case 2:
-                accion = "RPD"; //Hay un duplicado, en el menu anterior hay una opcion de proceso disciplinario
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1000", "RPD");
                 break;
             case 3:
-                accion = "SHE";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1000", "SHE");
                 break;
             case 4:
-                accion = "RDE";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1000", "SOS");
                 break;
             case 5:
-                accion = "SOS";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
@@ -158,17 +132,13 @@ void Empleados::procesoEmpleados(string n)
 }
 void Empleados::informesEmpleados(string n)
 {
-    fstream file1;
-    file1.open("Bitacora.txt", ios::app);
-    nombre2 = n;
-    time_t now = time(0);
-    date_time = ctime(&now);
+    nombre = n;
     int choice;
     do {
 	system("cls");
-	cout<<"\t\t\t-----------------------------------------------"<<endl;
-	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Informes   |"<<endl;
-	cout<<"\t\t\t-----------------------------------------------"<<endl;
+	cout<<"\t\t\t----------------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Informes   - 1100|"<<endl;
+	cout<<"\t\t\t----------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. visualizar nomina de pago "<<endl;
 	cout<<"\t\t\t 2. visualizar pagos extras "<<endl;
 	cout<<"\t\t\t 3. Visualizar horas laboradas "<<endl;
@@ -183,24 +153,16 @@ void Empleados::informesEmpleados(string n)
         switch(choice)
         {
             case 1:
-                accion = "VNP";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1100", "VNP");
                 break;
             case 2:
-                accion = "VPE";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1100", "VPE");
                 break;
             case 3:
-                accion = "VHL";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1100", "VHL");
                 break;
             case 4:
-                accion = "VDA";
-                file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-                file1.close();
+                llamarBitacora3.ingresoBitacora(nombre,"1100", "VDA");
                 break;
             case 5:
                 break;

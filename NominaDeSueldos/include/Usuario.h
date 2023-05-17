@@ -6,8 +6,6 @@ class Usuario
 {
 	private:
 		string nombre, contrasena;
-		string nombre2, accion;
-		char* date_time;
 	public:
 		void iniciarSesion();
 		void iniciarSesionSTAFF();
@@ -15,7 +13,6 @@ class Usuario
 		void insertar();
 		void modificar();
 		void borrar();
-		void cambioScore (int valScore);
 
 };
 

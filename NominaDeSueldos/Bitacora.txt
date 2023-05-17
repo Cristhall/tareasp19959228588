@@ -4,3 +4,8 @@ cris                NO LOGIN       Sun May 07 21:43:33 2023
 
 administrador       LOGIN          Sun May 07 22:54:36 2023
 administrador       RDE            Sun May 07 22:54:38 2023
+administrador       LOGIN          Sun May 07 23:35:04 2023
+cris                LOGIN          Sun May 07 23:35:14 2023
+administrador       700            LOGIN          Wed May 17 13:10:54 2023
+administrador       700            LOGIN          Wed May 17 13:12:03 2023
+cris                700            LOGIN          Wed May 17 13:13:14 2023

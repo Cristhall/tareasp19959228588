@@ -11,7 +11,7 @@ class Empleados
         void procesoEmpleados(string n);
         void informesEmpleados(string n);
     private:
-        string nombre2, accion, date_time;
+        string nombre;
 };
 
 #endif // EMPLEADOS_H

@@ -11,7 +11,7 @@ class Administracion
         void procesoSTAFF(string n);
         void infomesSTAFF(string n);
     private:
-        string nombre2, accion, date_time;
+        string nombre;
 };
 
 #endif // ADMINISTRACION_H

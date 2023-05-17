@@ -1,6 +1,7 @@
 #include "Usuario.h"
 #include "Administracion.h"
 #include "Empleados.h"
+#include "Bitacora.h"
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>
@@ -15,29 +16,24 @@ using namespace std;
 string nameUsuario, codigo;
 Administracion funcionAdmon;
 Empleados funcionEmpleados;
+Bitacora llamarBitacora;
 void Usuario::iniciarSesion()
 {
     system("cls");
 	fstream file, file1;
 	int found=0;
 	file.open("nombresUsuarios.txt",ios::in);
-	file1.open("Bitacora.txt", ios::app | ios::out);
-	cout<<"\n----------------------------------------------------------------------------------------------------------------";
-    cout<<"\n--------------------------------------------------- Iniciar Sesion ---------------------------------------------"<<endl;
+	cout<<"\n----------------------------------------------------------------------------------------------------------------------";
+    cout<<"\n--------------------------------------------------- Iniciar Sesion - 700 ---------------------------------------------"<<endl;
     cout<<"\n\t\tUsuario: ";
     cin>>nameUsuario;
     cout << "\t\tContrasena: ";
     cin >> codigo;
     file >> nombre >> contrasena;
-    nombre2 = nameUsuario;
-    time_t now = time(0);
-    date_time = ctime(&now);
     if(nameUsuario==nombre && codigo == contrasena)
         {
-            accion = "LOGIN";
-            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-            file1.close();
-            funcionEmpleados.menuGeneralEmpleados(nombre2);
+            llamarBitacora.ingresoBitacora(nameUsuario,"700", "LOGIN");
+            funcionEmpleados.menuGeneralEmpleados(nameUsuario);
             return;
             found++;
         }
@@ -45,9 +41,7 @@ void Usuario::iniciarSesion()
     {
         if (nameUsuario==ADMINISTRADOR && codigo==CONTRAADMON)
         {
-            accion = "LOGIN";
-            file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-            file1.close();
+            llamarBitacora.ingresoBitacora(nameUsuario,"700", "LOGIN");
             funcionAdmon.menuGeneralSTAFF(nameUsuario);
             return;
             found++;
@@ -56,9 +50,7 @@ void Usuario::iniciarSesion()
     file >> nombre >> contrasena;
     if(found==0)
     {
-        accion = "NO LOGIN";
-        file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
-        file1.close();
+        llamarBitacora.ingresoBitacora(nameUsuario,"700", "NO LOGIN");
         cout<<"\n\t\t\t El usuario o contraseña sin incorrectos..." << endl;
         system("pause");
     }
@@ -67,7 +59,7 @@ void Usuario::iniciarSesion()
 void Usuario::insertar()//creamos la funcion que permite crear usuarios
 {
 	system("cls");
-	fstream file, file1;
+	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------- Agregar Nuevo Usuario -----------------------------------------------"<<endl;
 	cout<<"\n\t\t\tIngresa el nombre de Usuario: ";
@@ -75,14 +67,8 @@ void Usuario::insertar()//creamos la funcion que permite crear usuarios
 	cout<<"\t\t\tIngresa la contraseña: ";
 	cin>>contrasena;
 	file.open("nombresUsuarios.txt", ios::app | ios::out);
-	file1.open("Bitacora.txt", ios::app);
-	nombre2 = nameUsuario;
-	accion = "Ins";
-	time_t now = time(0);
-    date_time = ctime(&now);
-	file1<<std::left<<std::setw(20)<< nombre2 <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
+	llamarBitacora.ingresoBitacora(nameUsuario,"800", "INS");
 	file<<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< contrasena<< "\n";
-	file1.close();
 	file.close();
 }
 void Usuario::menuSecundario()
@@ -152,7 +138,7 @@ void Usuario::modificar()
             }
             else{
                 if (opcion == 2){
-                    cout<<" Ingrese la contrase�a: ";
+                    cout<<" Ingrese la contrasena: ";
                     cin>>contrasena;
                     codigo = contrasena;
                 }
@@ -188,7 +174,7 @@ void Usuario::borrar()//creamos la funcion de borrar para luego se usada en otra
 	{
 		cout<<"\n Ingrese el usuario para borrar: ";
 		cin>>name;
-		cout<<" Ingrese la contrase�a: ";
+		cout<<" Ingrese la contrasena: ";
 		cin>>c2;
 		file1.open("Record.txt",ios::app | ios::out);//abrimos archivo a utilizar
 		file >> nombre >> contrasena;
