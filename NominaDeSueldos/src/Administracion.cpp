@@ -20,8 +20,8 @@ void Administracion::menuGeneralSTAFF(string n)
 	cout<<"\t\t\t 1). Informacion personal laboral "<<endl;
 	cout<<"\t\t\t 2). Procesos"<<endl;
 	cout<<"\t\t\t 3). Informes"<<endl;
-	cout<<"\t\t\t 4). Crear Usuarios"<<endl;
-	cout<<"\t\t\t 5). Modificar Usuarios"<<endl;
+	cout<<"\t\t\t 4). Catalogo Usuarios"<<endl;  //Relacion para CRUD DE USUARIOS
+	cout<<"\t\t\t 5). Catalogo Empleados"<<endl; //Relacion para CRUD DE EMPLEADOS
 	cout<<"\t\t\t 6). LOG OUT"<<endl;
     cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5-6 "<<endl;
@@ -41,7 +41,7 @@ void Administracion::menuGeneralSTAFF(string n)
 	    infomesSTAFF(nombre);
 		break;
 	case 4:
-	    ingresoUsuario.insertar();
+	    ingresoUsuario.menuSecundario();
 		break;
 	case 5:
 	    ingresoUsuario.menuSecundario();

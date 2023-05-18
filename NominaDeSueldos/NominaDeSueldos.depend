@@ -9,10 +9,10 @@
 	<iomanip>
 	"Usuario.h"
 
-1684339237 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
+1684386141 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
 	<iostream>
 
-1684350781 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
+1684386608 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
 	"Usuario.h"
 	"Administracion.h"
 	"Empleados.h"
@@ -31,7 +31,7 @@
 1683489515 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\login.h
 	<iostream>
 
-1684350629 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
+1684385631 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
 	"Administracion.h"
 	"Usuario.h"
 	"Bitacora.h"
@@ -39,13 +39,13 @@
 	<fstream>
 	<iomanip>
 
-1684350160 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
+1684385631 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
 	<iostream>
 
-1684340313 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
+1684355205 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
 	<iostream>
 
-1684350629 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
+1684355205 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
 	"Empleados.h"
 	"Usuario.h"
 	"Bitacora.h"
@@ -53,7 +53,7 @@
 	<fstream>
 	<iomanip>
 
-1684350217 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\bitacora.cpp
+1684355205 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\bitacora.cpp
 	"Bitacora.h"
 	<iostream>
 	<fstream>
@@ -62,6 +62,6 @@
 	<stdlib.h>
 	<iomanip>
 
-1684350188 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\bitacora.h
+1684355205 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\bitacora.h
 	<iostream>
 

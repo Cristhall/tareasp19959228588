@@ -9,3 +9,12 @@ cris                LOGIN          Sun May 07 23:35:14 2023
 administrador       700            LOGIN          Wed May 17 13:10:54 2023
 administrador       700            LOGIN          Wed May 17 13:12:03 2023
 cris                700            LOGIN          Wed May 17 13:13:14 2023
+administrador       700            LOGIN          Wed May 17 23:07:57 2023
+administrador       1500           INS            Wed May 17 23:08:11 2023
+administrador       800            INS            Wed May 17 23:08:17 2023
+administrador       1500           REA            Wed May 17 23:08:25 2023
+adrian              700            NO LOGIN       Wed May 17 23:10:22 2023
+adrian              700            NO LOGIN       Wed May 17 23:10:32 2023
+adrian              700            NO LOGIN       Wed May 17 23:10:42 2023
+cris                700            LOGIN          Wed May 17 23:11:06 2023
+adrian              700            LOGIN          Wed May 17 23:13:00 2023

@@ -12,6 +12,8 @@ class Usuario
 		void menuSecundario();
 		void insertar();
 		void modificar();
+		void buscar();
+		void desplegar();
 		void borrar();
 
 };
