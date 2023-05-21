@@ -11,10 +11,10 @@ class Usuario
 		void iniciarSesionSTAFF();
 		void menuSecundario();
 		void insertar();
-		void modificar();
-		void buscar();
 		void desplegar();
 		void borrar();
+		void modificar();
+		void buscar();
 
 };
 

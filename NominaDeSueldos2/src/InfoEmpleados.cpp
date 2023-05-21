@@ -252,4 +252,5 @@ void InfoEmpleados::borrar()
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
+	exit(0);
 }
