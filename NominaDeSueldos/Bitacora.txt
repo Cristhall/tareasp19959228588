@@ -18,3 +18,4 @@ adrian              700            NO LOGIN       Wed May 17 23:10:32 2023
 adrian              700            NO LOGIN       Wed May 17 23:10:42 2023
 cris                700            LOGIN          Wed May 17 23:11:06 2023
 adrian              700            LOGIN          Wed May 17 23:13:00 2023
+administrador       700            LOGIN          Fri May 19 20:24:01 2023

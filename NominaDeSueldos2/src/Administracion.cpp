@@ -1,17 +1,19 @@
 #include "Administracion.h"
 #include "Usuario.h"
 #include "Bitacora.h"
-#include "ConfiEmpleados.h"
+#include "Aplicaciones.h"
+#include "InfoEmpleados.h"
 #include <ctime>
 #include <fstream>
 #include <iomanip>
 Bitacora llamarBitacora2;
+Aplicaciones funcionesAplicaciones;
+InfoEmpleados InformacionEm;
 void Administracion::menuGeneralSTAFF(string n)
 {
     system("cls");
     int choice1;
     Usuario ingresoUsuario;
-    ConfiEmpleados menuEmpleados;
     nombre = n;
 	do
     {
@@ -23,8 +25,10 @@ void Administracion::menuGeneralSTAFF(string n)
 	cout<<"\t\t\t 2). Procesos"<<endl;
 	cout<<"\t\t\t 3). Informes"<<endl;
 	cout<<"\t\t\t 4). Catalogo Usuarios"<<endl;  //Relacion para CRUD DE USUARIOS
-	cout<<"\t\t\t 5). Catalogo Informacion Empleados"<<endl; //Relacion para CRUD DE EMPLEADOS
-	cout<<"\t\t\t 6). LOG OUT"<<endl;
+	cout<<"\t\t\t 5). Catalogo Empleados"<<endl; //Relacion para CRUD DE EMPLEADOS
+	cout<<"\t\t\t 6). Aplicaciones"<<endl;
+	cout<<"\t\t\t 7). Bitacora"<<endl;
+	cout<<"\t\t\t 8). LOG OUT"<<endl;
     cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5-6 "<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
@@ -43,19 +47,26 @@ void Administracion::menuGeneralSTAFF(string n)
 	    infomesSTAFF(nombre);
 		break;
 	case 4:
-	    //ingresoUsuario.menuSecundario();
+	    ingresoUsuario.menuSecundario();
 		break;
 	case 5:
-	    //menuEmpleados.menu(nombre);
+	    InformacionEm.menu(nombre);
 		break;
     case 6:
+	    funcionesAplicaciones.menu(nombre);
+		break;
+    case 7:
+	    llamarBitacora2.ingresoBitacora(nombre,"1800", "REA");
+	    llamarBitacora2.visualizarBitacora();
+		break;
+    case 8:
 		break;
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
 		cin.get();
 	}
 	system("cls");
-    }while(choice1!= 6);
+    }while(choice1!= 8);
 }
 void Administracion::infopersonalSTAFF(string n)
 {

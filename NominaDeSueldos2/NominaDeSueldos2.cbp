@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="NominaDeSueldos" />
+		<Option title="NominaDeSueldos2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/NominaDeSueldos" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/NominaDeSueldos2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/NominaDeSueldos" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/NominaDeSueldos2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -35,16 +35,18 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Administracion.h" />
+		<Unit filename="include/Aplicaciones.h" />
 		<Unit filename="include/Bitacora.h" />
 		<Unit filename="include/Empleados.h" />
+		<Unit filename="include/InfoEmpleados.h" />
 		<Unit filename="include/Usuario.h" />
-		<Unit filename="include/usuariosEmpleados.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Administracion.cpp" />
+		<Unit filename="src/Aplicaciones.cpp" />
 		<Unit filename="src/Bitacora.cpp" />
 		<Unit filename="src/Empleados.cpp" />
+		<Unit filename="src/InfoEmpleados.cpp" />
 		<Unit filename="src/Usuario.cpp" />
-		<Unit filename="src/usuariosEmpleados.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

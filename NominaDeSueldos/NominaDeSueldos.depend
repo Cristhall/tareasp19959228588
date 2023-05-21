@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683494814 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\main.cpp
+1684688188 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\main.cpp
 	<iostream>
 	<cstdlib>
 	<fstream>
@@ -9,21 +9,22 @@
 	<iomanip>
 	"Usuario.h"
 
-1684386141 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
+1684557406 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuario.h
 	<iostream>
 
-1684386608 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
+1684561540 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuario.cpp
 	"Usuario.h"
 	"Administracion.h"
 	"Empleados.h"
 	"Bitacora.h"
+	"usuariosAdmon.h"
+	"usuariosEmpleados.h"
 	<iostream>
 	<fstream>
 	<stdlib.h>
 	<cstdlib>
 	<conio.h>
 	<iomanip>
-	<ctime>
 
 1683489480 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\login.cpp
 	"Login.h"
@@ -31,21 +32,22 @@
 1683489515 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\login.h
 	<iostream>
 
-1684385631 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
+1684561645 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\administracion.cpp
 	"Administracion.h"
 	"Usuario.h"
 	"Bitacora.h"
+	"ConfiEmpleados.h"
 	<ctime>
 	<fstream>
 	<iomanip>
 
-1684385631 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
+1684553668 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\administracion.h
 	<iostream>
 
-1684355205 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
+1684507090 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\empleados.h
 	<iostream>
 
-1684355205 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
+1684507101 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\empleados.cpp
 	"Empleados.h"
 	"Usuario.h"
 	"Bitacora.h"
@@ -64,4 +66,45 @@
 
 1684355205 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\bitacora.h
 	<iostream>
+
+1684561645 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\confiempleados.cpp
+	"ConfiEmpleados.h"
+	"Usuario.h"
+	"Bitacora.h"
+	<ctime>
+	<fstream>
+	<iomanip>
+	<iostream>
+	<conio.h>
+
+1684548045 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\confiempleados.h
+	<iostream>
+
+1684560778 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuariosadmon.h
+	<iostream>
+
+1684560721 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\include\usuariosempleados.h
+	<iostream>
+
+1684561003 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuariosadmon.cpp
+	"usuariosAdmon.h"
+	"Bitacora.h"
+	"Usuario.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684561003 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos\src\usuariosempleados.cpp
+	"usuariosEmpleados.h"
+	"Bitacora.h"
+	"Usuario.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
 

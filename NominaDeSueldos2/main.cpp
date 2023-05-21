@@ -8,6 +8,8 @@
 #include "Usuario.h"
 
 using namespace std;
+void creditosModulo();
+void ayudaSTAFF();
 int main()
 {
     Usuario IngresoUsuario;
@@ -25,7 +27,7 @@ int main()
 	cout<<"\t\t\t 3). Salir del Sistema"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<< " "<<endl;
-	cout<<"\t\t\tingrese opcion: ";
+	cout<<"\t\t\tingrese oppcion: ";
 	cin>>numero;
 
         switch(numero)
@@ -40,10 +42,13 @@ int main()
 
             case 3:
                 break;
+
             default:
                 cout<<"\t\t\tIngrese opcion valida"<<endl;
                 cin.get();
         }
     } while(numero!= 3);
+
+
     return 0;
 }

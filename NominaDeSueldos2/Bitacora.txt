@@ -1,0 +1,2 @@
+administrador       700            LOGIN          Sun May 21 11:45:14 2023
+administrador       1700           REA            Sun May 21 11:45:21 2023
