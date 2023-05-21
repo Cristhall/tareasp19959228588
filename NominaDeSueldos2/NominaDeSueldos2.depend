@@ -26,7 +26,7 @@
 1684689276 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\bitacora.h
 	<iostream>
 
-1684691145 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\bitacora.cpp
+1684692494 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\bitacora.cpp
 	"Bitacora.h"
 	<iostream>
 	<fstream>
@@ -35,7 +35,7 @@
 	<stdlib.h>
 	<iomanip>
 
-1684692075 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\administracion.cpp
+1684692494 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\administracion.cpp
 	"Administracion.h"
 	"Usuario.h"
 	"Bitacora.h"
@@ -51,7 +51,7 @@
 1684691006 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\aplicaciones.h
 	<iostream>
 
-1684691086 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\usuario.cpp
+1684701776 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\usuario.cpp
 	"Usuario.h"
 	"Administracion.h"
 	"Empleados.h"
@@ -64,7 +64,7 @@
 	<iomanip>
 	<ctime>
 
-1684691103 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\aplicaciones.cpp
+1684692494 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\aplicaciones.cpp
 	"Aplicaciones.h"
 	"Bitacora.h"
 	<iostream>
@@ -75,7 +75,7 @@
 1684692095 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\infoempleados.h
 	<iostream>
 
-1684692154 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\infoempleados.cpp
+1684692494 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\infoempleados.cpp
 	"InfoEmpleados.h"
 	"Bitacora.h"
 	<conio.h>
