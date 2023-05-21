@@ -20,6 +20,7 @@ void Bitacora::visualizarBitacora()
 {
     system("cls");
 	fstream file;
+	string texto;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Bitacora - 1800 -------------------------"<<endl;
 	file.open("Bitacora.txt",ios::in);
@@ -27,11 +28,8 @@ void Bitacora::visualizarBitacora()
     while(!file.eof())
     {
         total++;
-        cout<<"\n\n\t\t\t Usuario: "<<nombre<<endl;
-        cout<<"\t\t\t No. Aplicacion: "<<aplicacion<<endl;
-        cout<<"\t\t\t Acci�n: "<<accion<<endl;
-        cout<<"\t\t\t Fecha: "<<date_time<<endl;
-        file >> nombre >> aplicacion >> accion >> date_time;
+        getline(file,texto);
+        cout<<texto<<endl;
     }
     if(total==0)
     {

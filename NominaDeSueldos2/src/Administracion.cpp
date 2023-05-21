@@ -77,13 +77,12 @@ void Administracion::infopersonalSTAFF(string n)
 	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF - Informacion personal laboral - 1200 |"<<endl;
 	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
-	cout<<"\t\t\t 1. Datos - Empleados "<<endl;
-	cout<<"\t\t\t 2. Datos - puestos de trabajo "<<endl;
-	cout<<"\t\t\t 3. Datos - Empleados amonestados "<<endl;
-	cout<<"\t\t\t 4. Datos - Rendimiento "<<endl;
-	cout<<"\t\t\t 5. Retornar menu anterior"<<endl;
+	cout<<"\t\t\t 1. Datos - puestos de trabajo "<<endl;
+	cout<<"\t\t\t 2. Datos - Empleados amonestados "<<endl;
+	cout<<"\t\t\t 3. Datos - Rendimiento "<<endl;
+	cout<<"\t\t\t 4. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
-	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5 "<<endl;
+	cout<<"\t\t\tOpcion a escoger:1-2-3-4 "<<endl;
 	cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tIngresa tu Opcion: ";
     cin>>choice;
@@ -91,24 +90,21 @@ void Administracion::infopersonalSTAFF(string n)
         switch(choice)
         {
             case 1:
-                llamarBitacora2.ingresoBitacora(nombre,"1200", "RDE");
-                break;
-            case 2:
                 llamarBitacora2.ingresoBitacora(nombre,"1200", "RDPT");
                 break;
-            case 3:
+            case 2:
                 llamarBitacora2.ingresoBitacora(nombre,"1200", "RDEA");
                 break;
-            case 4:
+            case 3:
                 llamarBitacora2.ingresoBitacora(nombre,"1200", "RDR");
                 break;
-            case 5:
+            case 4:
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
                 cin.get();
         }
-    }while(choice!= 5);
+    }while(choice!= 4);
 }
 void Administracion::procesoSTAFF(string n)
 {

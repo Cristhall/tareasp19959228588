@@ -6,3 +6,8 @@ administrador       1500           INS            Sun May 21 15:53:31 2023
 administrador       1500           INS            Sun May 21 15:53:40 2023
 fer                 700            LOGIN          Sun May 21 15:54:21 2023
 cris                700            LOGIN          Sun May 21 15:54:30 2023
+administrador       700            LOGIN          Sun May 21 16:06:35 2023
+administrador       1800           REA            Sun May 21 16:06:37 2023
+administrador       700            LOGIN          Sun May 21 16:13:47 2023
+administrador       1800           REA            Sun May 21 16:13:49 2023
+administrador       700            LOGIN          Sun May 21 16:18:37 2023
