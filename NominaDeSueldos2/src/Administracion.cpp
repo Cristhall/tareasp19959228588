@@ -118,7 +118,7 @@ void Administracion::procesoSTAFF(string n)
 	cout<<"\t\t\t 1. Crear y eliminar accion Diciplinaria "<<endl;
 	cout<<"\t\t\t 2. Actualizar puestos de trabajo "<<endl;
 	cout<<"\t\t\t 3. Revisar observaciones "<<endl;
-	cout<<"\t\t\t 4. Editar rendimiento de empelado "<<endl;
+	cout<<"\t\t\t 4. Editar rendimiento de empleado "<<endl;
 	cout<<"\t\t\t 5. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5 "<<endl;

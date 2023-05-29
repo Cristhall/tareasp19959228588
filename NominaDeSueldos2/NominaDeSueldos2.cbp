@@ -37,6 +37,7 @@
 		<Unit filename="include/Administracion.h" />
 		<Unit filename="include/Aplicaciones.h" />
 		<Unit filename="include/Bitacora.h" />
+		<Unit filename="include/Calculos.h" />
 		<Unit filename="include/Empleados.h" />
 		<Unit filename="include/InfoEmpleados.h" />
 		<Unit filename="include/Usuario.h" />
@@ -44,6 +45,7 @@
 		<Unit filename="src/Administracion.cpp" />
 		<Unit filename="src/Aplicaciones.cpp" />
 		<Unit filename="src/Bitacora.cpp" />
+		<Unit filename="src/Calculos.cpp" />
 		<Unit filename="src/Empleados.cpp" />
 		<Unit filename="src/InfoEmpleados.cpp" />
 		<Unit filename="src/Usuario.cpp" />

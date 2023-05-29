@@ -1,11 +1,13 @@
 #include "InfoEmpleados.h"
 #include "Bitacora.h"
+#include "Calculos.h"
 #include <conio.h>
 #include <iomanip>
 #include <iostream>
 #include <fstream>
 using namespace std;
 Bitacora llamarBitacora5;
+Calculos mandarSueldo;
 void InfoEmpleados::menu(string n)
 {
     nombre2 = n;
@@ -84,6 +86,7 @@ void InfoEmpleados::insertar()
 	cin>>puesto;
 	cout<<"\t\t\tIngresa Sueldo Persona  : ";
 	cin>>sueldo;
+	mandarSueldo.verPago(id, nombre, sueldo);
 	file.open("RegistroEmpleados.txt", ios::app | ios::out);
 	file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
 	file.close();

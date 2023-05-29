@@ -6,7 +6,8 @@ using namespace std;
 class InfoEmpleados
 {
     private:
-		string id,nombre,telefono,direccion,puesto,sueldo;
+		string id, nombre,telefono,direccion,puesto;
+		int sueldo;
 		string nombre2;
 	public:
 		void menu(string n);
