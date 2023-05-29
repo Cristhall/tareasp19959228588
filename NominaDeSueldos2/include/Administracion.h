@@ -7,7 +7,7 @@ class Administracion
 {
     public:
         void menuGeneralSTAFF(string n);
-        void infopersonalSTAFF(string n);
+        void catalogosSTAFF(string n);
         void procesoSTAFF(string n);
         void infomesSTAFF(string n);
     private:

@@ -66,6 +66,7 @@ void Usuario::menuSecundario()
 	do
     {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF - Catalogo Usuarios - 1500 |"<<endl;
 	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
@@ -119,6 +120,7 @@ void Usuario::menuSecundario()
 void Usuario::insertar()//creamos la funcion que permite crear usuarios
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------- Agregar Nuevo Usuario -----------------------------------------------"<<endl;
@@ -136,6 +138,7 @@ void Usuario::modificar()
 	fstream file,file1;
 	string name, c2;
 	int found=0, opcion;
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	cout<<"\n-------------------------Modificacion Detalles Usuario-------------------------"<<endl;
 	file.open("nombresUsuarios.txt",ios::in);
 	cout<<"\n Ingrese su nombre de usuario: ";
@@ -188,6 +191,7 @@ void Usuario::desplegar()
     system("cls");
 	fstream file;
 	int total=0;
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	cout<<"\n-------------------------Tabla de Detalles de Usuarios -------------------------"<<endl;
 	file.open("nombresUsuarios.txt",ios::in);
 	if(!file)
@@ -218,6 +222,7 @@ void Usuario::buscar()
 	system("cls");
 	fstream file;
 	int found=0;
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	file.open("nombresUsuarios.txt",ios::in);
 	if(!file)
 	{
@@ -254,6 +259,7 @@ void Usuario::borrar()//creamos la funcion de borrar para luego se usada en otra
 	fstream file,file1;
 	string name, c2;
 	int found=0;
+	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
 	cout<<"\n------------------------- Borrar Cuenta -------------------------"<<endl;
 	file.open("nombresUsuarios.txt",ios::in);
 	if(!file)

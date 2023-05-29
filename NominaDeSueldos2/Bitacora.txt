@@ -1,3 +1,7 @@
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 administrador       700            LOGIN          Sun May 21 11:45:14 2023
 administrador       1700           REA            Sun May 21 11:45:21 2023
 administrador       700            LOGIN          Sun May 21 15:06:34 2023
@@ -29,3 +33,18 @@ administrador       700            LOGIN          Mon May 29 09:15:37 2023
 administrador       1600           INS            Mon May 29 09:15:44 2023
 administrador       700            LOGIN          Mon May 29 09:18:28 2023
 administrador       1600           INS            Mon May 29 09:18:31 2023
+administrador       700            LOGIN          Mon May 29 16:32:43 2023
+administrador       1800           REA            Mon May 29 16:32:49 2023
+administrador       700            LOGIN          Mon May 29 16:36:13 2023
+administrador       1800           REA            Mon May 29 16:36:17 2023
+administrador       700            LOGIN          Mon May 29 16:37:02 2023
+administrador       1800           REA            Mon May 29 16:37:04 2023
+administrador       700            LOGIN          Mon May 29 16:37:40 2023
+administrador       1800           REA            Mon May 29 16:37:42 2023
+administrador       700            LOGIN          Mon May 29 16:38:23 2023
+administrador       1800           REA            Mon May 29 16:38:27 2023
+administrador       700            LOGIN          Mon May 29 16:38:50 2023
+administrador       1800           REA            Mon May 29 16:38:54 2023
+administrador       700            LOGIN          Mon May 29 16:46:10 2023
+administrador       700            LOGIN          Mon May 29 16:48:33 2023
+administrador       700            LOGIN          Mon May 29 16:49:33 2023
