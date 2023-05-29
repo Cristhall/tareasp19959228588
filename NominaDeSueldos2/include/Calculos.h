@@ -9,7 +9,7 @@ class Calculos
         void verPago(string id, string nombre, int n);
 
     private:
-        int salario;
+        int salario, cHExtras;
         double igss, isr, irtra, hExtras, salariototal;
         int bono;
         string id, nombre;

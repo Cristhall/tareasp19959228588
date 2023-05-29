@@ -30,7 +30,7 @@ void InfoEmpleados::menu(string n)
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"Ingresa tu Opcion: ";
+	cout<<"\t\t\tIngresa tu Opcion: ";
     cin>>choice;
 
     switch(choice)
@@ -71,25 +71,48 @@ void InfoEmpleados::menu(string n)
 void InfoEmpleados::insertar()
 {
 	system("cls");
-	fstream file;
-	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-	cout<<"\n-------------------------------------------------Agregar detalles Persona ---------------------------------------------"<<endl;
-	cout<<"\t\t\tIngresa Id Persona         : ";
-	cin>>id;
-	cout<<"\t\t\tIngresa Nombre Persona     : ";
-	cin>>nombre;
-	cout<<"\t\t\tIngresa Telefono Persona   : ";
-	cin>>telefono;
-	cout<<"\t\t\tIngresa Direccion Persona: ";
-	cin>>direccion;
-	cout<<"\t\t\tIngresa Puesto Persona  : ";
-	cin>>puesto;
-	cout<<"\t\t\tIngresa Sueldo Persona  : ";
-	cin>>sueldo;
+	fstream file, file1;
+	int contador = 0;
+	string participant_id;
+	system("cls");
+	do
+    {
+        cout<<"\n------------------------------------------------------------------------------------------------------------------------";
+        cout<<"\n-------------------------------------------------Agregar detalles Persona ---------------------------------------------"<<endl;
+        cout<<"\t\t\tIngresa Id Persona         : ";
+        cin>>id;
+        cout<<"\t\t\tIngresa Nombre Persona     : ";
+        cin>>nombre;
+        cout<<"\t\t\tIngresa Telefono Persona   : ";
+        cin>>telefono;
+        cout<<"\t\t\tIngresa Direccion Persona  : ";
+        cin>>direccion;
+        cout<<"\t\t\tIngresa Puesto Persona     : ";
+        cin>>puesto;
+        cout<<"\t\t\tIngresa Sueldo Persona     : ";
+        cin>>sueldo;
+        file.open("RegistroEmpleados.txt",ios::in);
+        participant_id = id;
+        while (!file.eof())
+        {
+            file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+            if(participant_id==id)
+			{
+				cout<<"\n\n\t\t\t ERROR! El id de la persona ya existe"<<endl;
+				file.close();
+				system("pause");
+			}
+			else
+            {
+                contador++;
+                file1.open("RegistroEmpleados.txt", ios::app | ios::out);
+                file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
+                file1.close();
+            }
+			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+        }
+	}while(contador > 0);
 	mandarSueldo.verPago(id, nombre, sueldo);
-	file.open("RegistroEmpleados.txt", ios::app | ios::out);
-	file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
-	file.close();
 }
 void InfoEmpleados::desplegar()
 {
@@ -139,7 +162,7 @@ void InfoEmpleados::modificar()
 	}
 	else
 	{
-		cout<<"\n Ingrese Id de la personas que quiere modificar: ";
+		cout<<"\n Ingrese Id de la persona que quiere modificar: ";
 		cin>>participant_id;
 		file1.open("Record.txt",ios::app | ios::out);
 		file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;

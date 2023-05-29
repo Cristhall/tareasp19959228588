@@ -1,2 +1,10 @@
 3456           ana            15245          6avezona13     secretaria     5000           
 003            jorge          201419         existe         contador       4500           
+003            vale           69521          existe         secretaria     1500           
+003            juan           25963          existe         alba¤il        2500           
+3456           ana            15245          6avezona13     secretaria     5000           
+003            vale           69521          existe         secretaria     1500           
+3456           ana            15245          6avezona13     secretaria     5000           
+3456           ana            15245          6avezona13     secretaria     5000           
+3456           ana            15245          6avezona13     secretaria     5000           
+3456           ana            15245          6avezona13     secretaria     5000           

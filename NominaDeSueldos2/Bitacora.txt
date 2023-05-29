@@ -20,3 +20,12 @@ administrador       700            LOGIN          Mon May 29 08:44:02 2023
 administrador       1600           INS            Mon May 29 08:44:15 2023
 administrador       700            LOGIN          Mon May 29 08:44:35 2023
 administrador       1600           INS            Mon May 29 08:44:43 2023
+administrador       700            LOGIN          Mon May 29 09:08:39 2023
+administrador       1600           INS            Mon May 29 09:08:43 2023
+administrador       700            LOGIN          Mon May 29 09:11:43 2023
+administrador       1600           INS            Mon May 29 09:11:46 2023
+administrador       700            LOGIN          Mon May 29 09:14:49 2023
+administrador       700            LOGIN          Mon May 29 09:15:37 2023
+administrador       1600           INS            Mon May 29 09:15:44 2023
+administrador       700            LOGIN          Mon May 29 09:18:28 2023
+administrador       1600           INS            Mon May 29 09:18:31 2023
