@@ -16,3 +16,7 @@ administrador       1600           INS            Mon May 22 07:11:31 2023
 fer                 700            LOGIN          Mon May 22 07:51:38 2023
 administrador       700            LOGIN          Mon May 22 07:51:48 2023
 administrador       1800           REA            Mon May 22 07:51:51 2023
+administrador       700            LOGIN          Mon May 29 08:44:02 2023
+administrador       1600           INS            Mon May 29 08:44:15 2023
+administrador       700            LOGIN          Mon May 29 08:44:35 2023
+administrador       1600           INS            Mon May 29 08:44:43 2023

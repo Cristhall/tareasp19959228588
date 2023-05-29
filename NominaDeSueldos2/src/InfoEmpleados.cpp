@@ -25,7 +25,7 @@ void InfoEmpleados::menu(string n)
 	cout<<"\t\t\t 3. Modifica Personas"<<endl;
 	cout<<"\t\t\t 4. Busca Personas"<<endl;
 	cout<<"\t\t\t 5. Borra Personas"<<endl;
-	cout<<"\t\t\t 6. Exit"<<endl;
+	cout<<"\t\t\t 6. Regresar a menu anterior"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
@@ -61,7 +61,7 @@ void InfoEmpleados::menu(string n)
 		borrar();
 		break;
 	case 6:
-		exit(0);
+		return;
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
 	}
