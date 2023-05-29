@@ -15,7 +15,7 @@ void Aplicaciones::menu(string n)
 	do
     {
 	system("cls");
-
+    cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	cout<<"\t\t\t--------------------------------------------------------"<<endl;
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF - Aplicaciones - 1700  |"<<endl;
 	cout<<"\t\t\t--------------------------------------------------------"<<endl;
@@ -39,7 +39,7 @@ void Aplicaciones::menu(string n)
     	{
     		llamarBitacora4.ingresoBitacora(nombre2,"1700", "INS");
     		insertar();
-    		cout<<"\n\t\t\t Agrega otra persona(Y,N): ";
+    		cout<<"\n\t\t\t Agrega otra aplicacon(Y,N): ";
     		cin>>x;
 		}while(x=='y'||x=='Y');
 		break;
@@ -70,6 +70,7 @@ void Aplicaciones::menu(string n)
 void Aplicaciones::insertar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	cout<<"\n-----------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------Agregar detalles de Aplicacion ---------------------------------------------"<<endl;
@@ -86,6 +87,7 @@ void Aplicaciones::insertar()
 void Aplicaciones::desplegar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Aplicaciones -------------------------"<<endl;
@@ -116,6 +118,7 @@ void Aplicaciones::desplegar()
 void Aplicaciones::modificar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;
 	int found=0;
@@ -161,6 +164,7 @@ void Aplicaciones::modificar()
 void Aplicaciones::buscar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int found=0;
 	file.open("Aplicaciones.txt",ios::in);
@@ -197,6 +201,7 @@ void Aplicaciones::buscar()
 void Aplicaciones::borrar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;
 	int found=0;

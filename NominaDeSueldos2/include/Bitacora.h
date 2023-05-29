@@ -6,7 +6,7 @@ class Bitacora
 {
     public:
         void ingresoBitacora(string nombre, string aplicacion, string accion);
-        void visualizarBitacora();
+        void visualizarBitacora(string n);
 
     private:
         string nombre, accion, aplicacion;

@@ -59,9 +59,9 @@ void Administracion::catalogosSTAFF(string n)
     do {
 	system("cls");
 	cout << "\n\t\t\t Usuario: " << nombre << "\n\n";
-	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF - Catalogos - 1200 |"<<endl;
-	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Usuarios "<<endl;
 	cout<<"\t\t\t 2. Empleados "<<endl;
 	cout<<"\t\t\t 3. Retornar menu anterior"<<endl;
@@ -151,8 +151,8 @@ void Administracion::infomesSTAFF(string n)
                 llamarBitacora2.ingresoBitacora(nombre,"1400", "APE");
                 break;
             case 2:
-                llamarBitacora2.ingresoBitacora(nombre,"1800", "REA");
-                llamarBitacora2.visualizarBitacora();
+                llamarBitacora2.ingresoBitacora(nombre,"1400", "REA");
+                llamarBitacora2.visualizarBitacora(nombre);
                 break;
             case 3:
                 break;

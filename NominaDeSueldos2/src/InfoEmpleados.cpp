@@ -16,10 +16,10 @@ void InfoEmpleados::menu(string n)
 	do
     {
 	system("cls");
-
-	cout<<"\t\t\t-------------------------------"<<endl;
+    cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
+	cout<<"\t\t\t--------------------------------------"<<endl;
 	cout<<"\t\t\t |   SISTEMA GESTION PERSONAS - 1600 |"<<endl;
-	cout<<"\t\t\t-------------------------------"<<endl;
+	cout<<"\t\t\t--------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Ingreso Personas"<<endl;
 	cout<<"\t\t\t 2. Despliegue Personas"<<endl;
 	cout<<"\t\t\t 3. Modifica Personas"<<endl;
@@ -71,6 +71,7 @@ void InfoEmpleados::menu(string n)
 void InfoEmpleados::insertar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file, file1;
 	int contador = 0;
 	string participant_id;
@@ -117,6 +118,7 @@ void InfoEmpleados::insertar()
 void InfoEmpleados::desplegar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Personas -------------------------"<<endl;
@@ -132,12 +134,12 @@ void InfoEmpleados::desplegar()
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\n\n\t\t\t Id Persona: "<<id<<endl;
-			cout<<"\t\t\t Nombre Persona: "<<nombre<<endl;
-			cout<<"\t\t\t Telefono Persona: "<<telefono<<endl;
-			cout<<"\t\t\t Direccion Persona: "<<direccion<<endl;
-			cout<<"\t\t\t Puesto Persona: "<<puesto<<endl;
-			cout<<"\t\t\t Sueldo persona: "<<sueldo<<endl;
+			cout<<"\n\n\t\t\t Id Persona    : "<<id<<endl;
+			cout<<"\t\t\t Nombre Persona    : "<<nombre<<endl;
+			cout<<"\t\t\t Telefono Persona  : "<<telefono<<endl;
+			cout<<"\t\t\t Direccion Persona : "<<direccion<<endl;
+			cout<<"\t\t\t Puesto Persona    : "<<puesto<<endl;
+			cout<<"\t\t\t Sueldo persona    : "<<sueldo<<endl;
 			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
 		}
 		if(total==0)
@@ -150,6 +152,7 @@ void InfoEmpleados::desplegar()
 void InfoEmpleados::modificar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;
 	int found=0;
@@ -174,17 +177,17 @@ void InfoEmpleados::modificar()
 			}
 			else
 			{
-				cout<<"\t\t\tIngrese Id Persona: ";
+				cout<<"\t\t\tIngrese Id Persona        : ";
 				cin>>id;
-				cout<<"\t\t\tIngrese Nombre Persona: ";
+				cout<<"\t\t\tIngrese Nombre Persona    : ";
 				cin>>nombre;
-				cout<<"\t\t\tIngrese Telefono Persona: ";
+				cout<<"\t\t\tIngrese Telefono Persona  : ";
 				cin>>telefono;
-				cout<<"\t\t\tIngrese Direccion Persona: ";
+				cout<<"\t\t\tIngrese Direccion Persona : ";
 				cin>>direccion;
-				cout<<"\t\t\tIngrese Puesto Persona: ";
+				cout<<"\t\t\tIngrese Puesto Persona    : ";
 				cin>>puesto;
-				cout<<"\t\t\tIngrese Sueldo Persona: ";
+				cout<<"\t\t\tIngrese Sueldo Persona    : ";
 				cin>>sueldo;
 				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
 				found++;
@@ -201,6 +204,7 @@ void InfoEmpleados::modificar()
 void InfoEmpleados::buscar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int found=0;
 	file.open("RegistroEmpleados.txt",ios::in);
@@ -220,12 +224,12 @@ void InfoEmpleados::buscar()
 		{
 			if(participant_id==id)
 			{
-				cout<<"\n\n\t\t\t Id Persona: "<<id<<endl;
-				cout<<"\t\t\t Nombre Persona: "<<nombre<<endl;
-				cout<<"\t\t\t Telefono Persona: "<<telefono<<endl;
-				cout<<"\t\t\t Direccion Persona: "<<direccion<<endl;
-				cout<<"\t\t\t Puesto Persona: "<<puesto<<endl;
-				cout<<"\t\t\t Sueldo Persona: "<<sueldo<< endl;
+				cout<<"\n\n\t\t\t Id Persona     : "<<id<<endl;
+				cout<<"\t\t\t Nombre Persona     : "<<nombre<<endl;
+				cout<<"\t\t\t Telefono Persona   : "<<telefono<<endl;
+				cout<<"\t\t\t Direccion Persona  : "<<direccion<<endl;
+				cout<<"\t\t\t Puesto Persona     : "<<puesto<<endl;
+				cout<<"\t\t\t Sueldo Persona     : "<<sueldo<< endl;
 				found++;
 			}
 			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
@@ -240,6 +244,7 @@ void InfoEmpleados::buscar()
 void InfoEmpleados::borrar()
 {
 	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;
 	int found=0;

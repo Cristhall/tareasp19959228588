@@ -16,9 +16,11 @@ void Bitacora::ingresoBitacora(string nombre, string aplicacion, string accion)
     file<<std::left<<std::setw(20)<< nombre<<std::left<<std::setw(15)<< aplicacion <<std::left<<std::setw(15)<< accion <<std::left<<std::setw(15)<< date_time;
     file.close();
 }
-void Bitacora::visualizarBitacora()
+void Bitacora::visualizarBitacora(string n)
 {
     system("cls");
+    string nombre = n;
+    cout << "\n\t\t\t Usuario: " << nombre << "\n\n";
 	fstream file;
 	string texto;
 	int total=0;

@@ -67,9 +67,9 @@ void Usuario::menuSecundario()
     {
 	system("cls");
 	cout << "\n\t\t\t Usuario: " << nameUsuario << "\n\n";
-	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF - Catalogo Usuarios - 1500 |"<<endl;
-	cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Insertar Usuario"<<endl;
 	cout<<"\t\t\t 2. Modificar Usuario"<<endl;
 	cout<<"\t\t\t 3. Buscar Usuario"<<endl;
