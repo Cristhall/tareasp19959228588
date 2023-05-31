@@ -7,7 +7,6 @@ class InfoEmpleados
 {
     private:
 		string id, nombre,telefono,direccion,puesto;
-		int sueldo;
 		string nombre2;
 	public:
 		void menu(string n);

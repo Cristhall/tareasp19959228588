@@ -26,7 +26,6 @@ void InfoEmpleados::menu(string n)
 	cout<<"\t\t\t 4. Busca Personas"<<endl;
 	cout<<"\t\t\t 5. Borra Personas"<<endl;
 	cout<<"\t\t\t 6. Regresar a menu anterior"<<endl;
-
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
@@ -72,48 +71,26 @@ void InfoEmpleados::insertar()
 {
 	system("cls");
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
-	fstream file, file1;
-	int contador = 0;
+	fstream file;
 	string participant_id;
-	system("cls");
-	do
-    {
-        cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-        cout<<"\n-------------------------------------------------Agregar detalles Persona ---------------------------------------------"<<endl;
-        cout<<"\t\t\tIngresa Id Persona         : ";
-        cin>>id;
-        cout<<"\t\t\tIngresa Nombre Persona     : ";
-        cin>>nombre;
-        cout<<"\t\t\tIngresa Telefono Persona   : ";
-        cin>>telefono;
-        cout<<"\t\t\tIngresa Direccion Persona  : ";
-        cin>>direccion;
-        cout<<"\t\t\tIngresa Puesto Persona     : ";
-        cin>>puesto;
-        cout<<"\t\t\tIngresa Sueldo Persona     : ";
-        cin>>sueldo;
-        file.open("RegistroEmpleados.txt",ios::in);
-        participant_id = id;
-        while (!file.eof())
-        {
-            file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
-            if(participant_id==id)
-			{
-				cout<<"\n\n\t\t\t ERROR! El id de la persona ya existe"<<endl;
-				file.close();
-				system("pause");
-			}
-			else
-            {
-                contador++;
-                file1.open("RegistroEmpleados.txt", ios::app | ios::out);
-                file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
-                file1.close();
-            }
-			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
-        }
-	}while(contador > 0);
-	mandarSueldo.verPago(id, nombre, sueldo);
+    cout<<"\n------------------------------------------------------------------------------------------------------------------------";
+    cout<<"\n------------------------------------------------- Agregar detalles Persona ---------------------------------------------"<<endl;
+    cout<<"\n\t\t\tIngresa Id Persona         : ";
+    cin>>id;
+    cout<<"\t\t\tIngresa Nombre Persona     : ";
+    cin>>nombre;
+    cout<<"\t\t\tIngresa Telefono Persona   : ";
+    cin>>telefono;
+    cout<<"\t\t\tIngresa Direccion Persona  : ";
+    cin>>direccion;
+    cout<<"\t\t\tIngresa Puesto Persona     : ";
+    cin>>puesto;
+    file.open("RegistroEmpleados.txt",ios::app | ios::out);
+    file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
+    cout << endl;
+    system("pause");
+    mandarSueldo.calculoSueldo(id, nombre, puesto);
+    file.close();
 }
 void InfoEmpleados::desplegar()
 {
@@ -130,7 +107,7 @@ void InfoEmpleados::desplegar()
 	}
 	else
 	{
-		file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+		file >> id >> nombre >> telefono >> direccion >> puesto;
 		while(!file.eof())
 		{
 			total++;
@@ -139,8 +116,7 @@ void InfoEmpleados::desplegar()
 			cout<<"\t\t\t Telefono Persona  : "<<telefono<<endl;
 			cout<<"\t\t\t Direccion Persona : "<<direccion<<endl;
 			cout<<"\t\t\t Puesto Persona    : "<<puesto<<endl;
-			cout<<"\t\t\t Sueldo persona    : "<<sueldo<<endl;
-			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+			file >> id >> nombre >> telefono >> direccion >> puesto;
 		}
 		if(total==0)
 		{
@@ -168,12 +144,12 @@ void InfoEmpleados::modificar()
 		cout<<"\n Ingrese Id de la persona que quiere modificar: ";
 		cin>>participant_id;
 		file1.open("Record.txt",ios::app | ios::out);
-		file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+		file >> id >> nombre >> telefono >> direccion >> puesto;
 		while(!file.eof())
 		{
 			if(participant_id!=id)
 			{
-			 file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
+			 file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
 			}
 			else
 			{
@@ -187,12 +163,10 @@ void InfoEmpleados::modificar()
 				cin>>direccion;
 				cout<<"\t\t\tIngrese Puesto Persona    : ";
 				cin>>puesto;
-				cout<<"\t\t\tIngrese Sueldo Persona    : ";
-				cin>>sueldo;
-				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
+				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
 				found++;
 			}
-			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+			file >> id >> nombre >> telefono >> direccion >> puesto;
 
 		}
 		file1.close();
@@ -219,7 +193,7 @@ void InfoEmpleados::buscar()
 		cout<<"\n-------------------------Datos de Persona buscada------------------------"<<endl;
 		cout<<"\nIngrese Id de la Persona que quiere buscar: ";
 		cin>>participant_id;
-		file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+		file >> id >> nombre >> telefono >> direccion >> puesto;
 		while(!file.eof())
 		{
 			if(participant_id==id)
@@ -229,10 +203,9 @@ void InfoEmpleados::buscar()
 				cout<<"\t\t\t Telefono Persona   : "<<telefono<<endl;
 				cout<<"\t\t\t Direccion Persona  : "<<direccion<<endl;
 				cout<<"\t\t\t Puesto Persona     : "<<puesto<<endl;
-				cout<<"\t\t\t Sueldo Persona     : "<<sueldo<< endl;
 				found++;
 			}
-			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+			file >> id >> nombre >> telefono >> direccion >> puesto;
 		}
 		if(found==0)
 		{
@@ -260,19 +233,19 @@ void InfoEmpleados::borrar()
 		cout<<"\n Ingrese el Id de la Persona que quiere borrar: ";
 		cin>>participant_id;
 		file1.open("Record.txt",ios::app | ios::out);
-		file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+		file >> id >> nombre >> telefono >> direccion >> puesto;
 		while(!file.eof())
 		{
 			if(participant_id!= id)
 			{
-				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto <<std::left<<std::setw(15)<< sueldo << "\n";
+				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
 			}
 			else
 			{
 				found++;
 				cout << "\n\t\t\tBorrado de informacion exitoso";
 			}
-			file >> id >> nombre >> telefono >> direccion >> puesto >> sueldo;
+			file >> id >> nombre >> telefono >> direccion >> puesto;
 		}
 		if(found==0)
 		{
@@ -283,5 +256,4 @@ void InfoEmpleados::borrar()
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
-	exit(0);
 }

@@ -1,0 +1,3 @@
+007            prueba7        ninguno        
+008            prueba8        contador       
+009            prueba9        contador       

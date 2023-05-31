@@ -24,12 +24,12 @@ void Aplicaciones::menu(string n)
 	cout<<"\t\t\t 3. Modificar aplicacion"<<endl;
 	cout<<"\t\t\t 4. Buscar aplicacion"<<endl;
 	cout<<"\t\t\t 5. Borrar aplicacion"<<endl;
-	cout<<"\t\t\t 6. Exit"<<endl;
+	cout<<"\t\t\t 6. Regresar a menu anterior"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"Ingresa tu Opcion: ";
+	cout<<"\t\t\tIngresa tu Opcion: ";
     cin>>choice;
 
     switch(choice)
@@ -38,26 +38,26 @@ void Aplicaciones::menu(string n)
     	do
     	{
     		llamarBitacora4.ingresoBitacora(nombre2,"1700", "INS");
-    		insertar();
+    		insertar(nombre2);
     		cout<<"\n\t\t\t Agrega otra aplicacon(Y,N): ";
     		cin>>x;
 		}while(x=='y'||x=='Y');
 		break;
 	case 2:
 		llamarBitacora4.ingresoBitacora(nombre2,"1700", "REA");
-		desplegar();
+		desplegar(nombre2);
 		break;
 	case 3:
 		llamarBitacora4.ingresoBitacora(nombre2,"1700", "UPD");
-		modificar();
+		modificar(nombre2);
 		break;
 	case 4:
 		llamarBitacora4.ingresoBitacora(nombre2,"1700", "SEA");
-		buscar();
+		buscar(nombre2);
 		break;
 	case 5:
 		llamarBitacora4.ingresoBitacora(nombre2,"1700", "DEL");
-		borrar();
+		borrar(nombre2);
 		break;
 	case 6:
 		return;
@@ -67,9 +67,10 @@ void Aplicaciones::menu(string n)
 	getch();
     }while(choice!= 6);
 }
-void Aplicaciones::insertar()
+void Aplicaciones::insertar(string n)
 {
 	system("cls");
+	nombre2 = n;
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	cout<<"\n-----------------------------------------------------------------------------------------------------------------------------";
@@ -84,9 +85,10 @@ void Aplicaciones::insertar()
 	file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< estado << "\n";
 	file.close();
 }
-void Aplicaciones::desplegar()
+void Aplicaciones::desplegar(string n)
 {
 	system("cls");
+	nombre2 = n;
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int total=0;
@@ -115,9 +117,10 @@ void Aplicaciones::desplegar()
 	}
 	file.close();
 }
-void Aplicaciones::modificar()
+void Aplicaciones::modificar(string n)
 {
 	system("cls");
+	nombre2 = n;
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;
@@ -161,9 +164,10 @@ void Aplicaciones::modificar()
 		rename("Record.txt","Aplicaciones.txt");
 	}
 }
-void Aplicaciones::buscar()
+void Aplicaciones::buscar(string n)
 {
 	system("cls");
+	nombre2 = n;
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file;
 	int found=0;
@@ -198,9 +202,10 @@ void Aplicaciones::buscar()
 		file.close();
 	}
 }
-void Aplicaciones::borrar()
+void Aplicaciones::borrar(string n)
 {
 	system("cls");
+	nombre2 = n;
 	cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
 	fstream file,file1;
 	string participant_id;

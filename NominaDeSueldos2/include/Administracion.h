@@ -10,6 +10,7 @@ class Administracion
         void catalogosSTAFF(string n);
         void procesoSTAFF(string n);
         void infomesSTAFF(string n);
+        void puestos(string n);
     private:
         string nombre;
 };

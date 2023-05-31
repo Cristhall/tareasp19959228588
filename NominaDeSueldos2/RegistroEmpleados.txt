@@ -1,10 +1,9 @@
-3456           ana            15245          6avezona13     secretaria     5000           
-003            jorge          201419         existe         contador       4500           
-003            vale           69521          existe         secretaria     1500           
-003            juan           25963          existe         alba¤il        2500           
-3456           ana            15245          6avezona13     secretaria     5000           
-003            vale           69521          existe         secretaria     1500           
-3456           ana            15245          6avezona13     secretaria     5000           
-3456           ana            15245          6avezona13     secretaria     5000           
-3456           ana            15245          6avezona13     secretaria     5000           
-3456           ana            15245          6avezona13     secretaria     5000           
+001            prueba         2518           existe         contador       
+002            prueba2        7830           existe         contador       
+003            prueba3        2590           existe         contador       
+004            prueba4        2510           existe         ninguno        
+005            prueba5        2510           existe         contador       
+006            prueba6        520            existe         contador       
+007            prueba7        520            existe         ninguno        
+008            prueba8        630            existe         contador       
+009            prueba9        520            existe         contador       

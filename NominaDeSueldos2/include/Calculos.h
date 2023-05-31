@@ -6,13 +6,13 @@ using namespace std;
 class Calculos
 {
     public:
-        void verPago(string id, string nombre, int n);
+        void calculoSueldo(string i, string n, string p);
+        void verPago(int s);
 
     private:
-        int salario, cHExtras;
-        double igss, isr, irtra, hExtras, salariototal;
-        int bono;
-        string id, nombre;
+        int salario, salario2, cHExtras, salarioBase, bonificacion, salarioTotal;
+        double igss, isr, irtra, hExtras;
+        string id, nombre, puesto, puesto2, fecha;
 };
 
 #endif // CALCULOS_H

@@ -3,6 +3,7 @@
 #include "Bitacora.h"
 #include "Aplicaciones.h"
 #include "InfoEmpleados.h"
+#include "Puestos.h"
 #include <ctime>
 #include <fstream>
 #include <iomanip>
@@ -10,6 +11,7 @@ Bitacora llamarBitacora2;
 Aplicaciones funcionesAplicaciones;
 InfoEmpleados InformacionEm;
 Usuario ingresoUsuario;
+Puestos mandarUsuario;
 void Administracion::menuGeneralSTAFF(string n)
 {
     system("cls");
@@ -110,7 +112,7 @@ void Administracion::procesoSTAFF(string n)
         switch(choice)
         {
             case 1:
-
+                puestos(nombre);
                 break;
             case 2:
                 funcionesAplicaciones.menu(nombre);
@@ -161,4 +163,46 @@ void Administracion::infomesSTAFF(string n)
                 cin.get();
         }
     }while(choice!= 3);
+}
+void Administracion::puestos(string n)
+{
+    nombre = n;
+    int choice;
+    do {
+	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre << "\n\n";
+	cout<<"\t\t\t---------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF -  Puestos - 1900 |"<<endl;
+	cout<<"\t\t\t---------------------------------------------------"<<endl;
+	cout<<"\t\t\t 1. Insertar Puesto "<<endl;
+	cout<<"\t\t\t 2. Modificar Puesto "<<endl;
+	cout<<"\t\t\t 3. Visualizar Puestos "<<endl;
+	cout<<"\t\t\t 4. Retornar menu anterior"<<endl;
+    cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tOpcion a escoger: 1-2-3-4 "<<endl;
+	cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa tu Opcion: ";
+    cin>>choice;
+
+        switch(choice)
+        {
+            case 1:
+                llamarBitacora2.ingresoBitacora(nombre,"1900", "INS");
+                mandarUsuario.ingresarPuesto(nombre);
+                break;
+            case 2:
+                llamarBitacora2.ingresoBitacora(nombre,"1900", "UPD");
+                mandarUsuario.modificarPuesto(nombre);
+                break;
+            case 3:
+                llamarBitacora2.ingresoBitacora(nombre,"1900", "REA");
+                mandarUsuario.visualizarPuesto(nombre);
+                break;
+            case 4:
+                break;
+            default:
+                cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
+                cin.get();
+        }
+    }while(choice!= 4);
 }

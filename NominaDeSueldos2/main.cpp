@@ -27,7 +27,7 @@ int main()
 	cout<<"\t\t\t 3). Salir del Sistema"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<< " "<<endl;
-	cout<<"\t\t\tingrese oppcion: ";
+	cout<<"\t\t\tingrese Opcion: ";
 	cin>>numero;
 
         switch(numero)
@@ -35,11 +35,9 @@ int main()
             case 1:
                 IngresoUsuario.iniciarSesion();
                 break;
-
             case 2:
                 IngresoUsuario.iniciarSesion();
                 break;
-
             case 3:
                 break;
 
