@@ -40,6 +40,7 @@
 		<Unit filename="include/Calculos.h" />
 		<Unit filename="include/Empleados.h" />
 		<Unit filename="include/InfoEmpleados.h" />
+		<Unit filename="include/Planilla.h" />
 		<Unit filename="include/Puestos.h" />
 		<Unit filename="include/Usuario.h" />
 		<Unit filename="main.cpp" />
@@ -49,6 +50,7 @@
 		<Unit filename="src/Calculos.cpp" />
 		<Unit filename="src/Empleados.cpp" />
 		<Unit filename="src/InfoEmpleados.cpp" />
+		<Unit filename="src/Planilla.cpp" />
 		<Unit filename="src/Puestos.cpp" />
 		<Unit filename="src/Usuario.cpp" />
 		<Extensions>

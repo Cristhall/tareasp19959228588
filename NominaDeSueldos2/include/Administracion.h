@@ -7,10 +7,12 @@ class Administracion
 {
     public:
         void menuGeneralSTAFF(string n);
-        void catalogosSTAFF(string n);
-        void procesoSTAFF(string n);
-        void infomesSTAFF(string n);
-        void puestos(string n);
+        void catalogosSTAFF();
+        void procesoSTAFF();
+        void infomesSTAFF();
+        void puestos();
+        void planilla();
+        void pagos();
     private:
         string nombre;
 };

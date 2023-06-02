@@ -7,8 +7,8 @@ class Puestos
 {
     public:
         void ingresarPuesto(string n);
-        void modificarPuesto(string n);
         void visualizarPuesto(string n);
+        void buscarPuesto(string n);
 
     private:
         string nombre, puesto;

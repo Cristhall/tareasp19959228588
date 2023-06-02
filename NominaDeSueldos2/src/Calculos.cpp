@@ -28,24 +28,44 @@ void Calculos::calculoSueldo(string i, string n, string p)
 }
 void Calculos::verPago(int s)
 {
-    fstream file;
+    fstream file, file1;
     salario = s;
-    igss = salario * 0.0483;
-    irtra = salario * 0.01;
-    hExtras = 0;
-    cHExtras = 0;
-    if (salario<=30000 && salario>=0.00)
+    hTrabajadas = 0;
+    montoHTr = 0;
+    string beneficio = "bonificacion";
+    string impuesto1 = "igss";
+    string impuesto2 = "isrmenor";
+    string impuesto3 = "isrmayor";
+    file.open("Impuestos.txt",ios::in);
+    file >> impuesto >> monto;
+    while(!file.eof())
     {
-        isr = salario * 0.05;
+        if(beneficio==impuesto)
+        {
+            bonificacion = monto;
+        }
+        if(impuesto1==impuesto)
+        {
+            igss = salario * monto;
+        }
+        if(impuesto2==impuesto)
+        {
+            if (salario<=30000 && salario>=0.00)
+            {
+                isr = salario * monto;
+            }
+        }
+        if(impuesto3==impuesto)
+        {
+            if(salario>30000)
+            {
+                isr = salario * monto;
+            }
+        }
+        file >> impuesto >> monto;
     }
-    else
-    {
-        isr = salario * 0.07;
-
-    }
-    bonificacion = 250;
-    salarioTotal = (salario + bonificacion) - (hExtras+igss+irtra+isr);
-    file.open("PlanillaDeSueldos.txt", ios::app | ios::out);
-    file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< cHExtras <<std::left<<std::setw(15)<< hExtras <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< irtra <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
-    file.close();
+    salarioTotal = (salario+bonificacion) - (igss+isr);
+    file1.open("PlanillaDeSueldos.txt", ios::app | ios::out);
+    file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< hTrabajadas <<std::left<<std::setw(15)<< montoHTr <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
+    file1.close();
 }

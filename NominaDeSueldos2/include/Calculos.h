@@ -10,9 +10,9 @@ class Calculos
         void verPago(int s);
 
     private:
-        int salario, salario2, cHExtras, salarioBase, bonificacion, salarioTotal;
-        double igss, isr, irtra, hExtras;
-        string id, nombre, puesto, puesto2, fecha;
+        int salario, salario2, salarioBase, bonificacion, hTrabajadas;
+        double igss, isr, montoHTr, salarioTotal, monto;
+        string id, nombre, puesto, puesto2, fecha, impuesto;
 };
 
 #endif // CALCULOS_H

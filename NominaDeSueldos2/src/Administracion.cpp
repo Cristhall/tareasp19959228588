@@ -4,6 +4,7 @@
 #include "Aplicaciones.h"
 #include "InfoEmpleados.h"
 #include "Puestos.h"
+#include "Planilla.h"
 #include <ctime>
 #include <fstream>
 #include <iomanip>
@@ -12,6 +13,7 @@ Aplicaciones funcionesAplicaciones;
 InfoEmpleados InformacionEm;
 Usuario ingresoUsuario;
 Puestos mandarUsuario;
+Planilla llamarFP;
 void Administracion::menuGeneralSTAFF(string n)
 {
     system("cls");
@@ -37,13 +39,13 @@ void Administracion::menuGeneralSTAFF(string n)
     switch(choice1)
     {
     case 1:
-        catalogosSTAFF(nombre);
+        catalogosSTAFF();
 		break;
 	case 2:
-	    procesoSTAFF(nombre);
+	    procesoSTAFF();
 		break;
 	case 3:
-	    infomesSTAFF(nombre);
+	    infomesSTAFF();
 		break;
     case 4:
 		return;
@@ -54,9 +56,8 @@ void Administracion::menuGeneralSTAFF(string n)
 	system("cls");
     }while(choice1!= 8);
 }
-void Administracion::catalogosSTAFF(string n)
+void Administracion::catalogosSTAFF()
 {
-    nombre = n;
     int choice;
     do {
 	system("cls");
@@ -89,9 +90,8 @@ void Administracion::catalogosSTAFF(string n)
         }
     }while(choice!=3);
 }
-void Administracion::procesoSTAFF(string n)
+void Administracion::procesoSTAFF()
 {
-    nombre = n;
     int choice;
     do {
 	system("cls");
@@ -112,13 +112,13 @@ void Administracion::procesoSTAFF(string n)
         switch(choice)
         {
             case 1:
-                puestos(nombre);
+                puestos();
                 break;
             case 2:
                 funcionesAplicaciones.menu(nombre);
                 break;
             case 3:
-
+                pagos();
                 break;
             case 4:
                 break;
@@ -128,9 +128,8 @@ void Administracion::procesoSTAFF(string n)
         }
     }while(choice!= 4);
 }
-void Administracion::infomesSTAFF(string n)
+void Administracion::infomesSTAFF()
 {
-    nombre = n;
     int choice;
     do {
 	system("cls");
@@ -150,7 +149,7 @@ void Administracion::infomesSTAFF(string n)
         switch(choice)
         {
             case 1:
-                llamarBitacora2.ingresoBitacora(nombre,"1400", "APE");
+                planilla();
                 break;
             case 2:
                 llamarBitacora2.ingresoBitacora(nombre,"1400", "REA");
@@ -164,9 +163,8 @@ void Administracion::infomesSTAFF(string n)
         }
     }while(choice!= 3);
 }
-void Administracion::puestos(string n)
+void Administracion::puestos()
 {
-    nombre = n;
     int choice;
     do {
 	system("cls");
@@ -175,8 +173,8 @@ void Administracion::puestos(string n)
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF -  Puestos - 1900 |"<<endl;
 	cout<<"\t\t\t---------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Insertar Puesto "<<endl;
-	cout<<"\t\t\t 2. Modificar Puesto "<<endl;
-	cout<<"\t\t\t 3. Visualizar Puestos "<<endl;
+	cout<<"\t\t\t 2. Visualizar Puestos "<<endl;
+	cout<<"\t\t\t 3. Buscar Puesto "<<endl;
 	cout<<"\t\t\t 4. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger: 1-2-3-4 "<<endl;
@@ -191,12 +189,12 @@ void Administracion::puestos(string n)
                 mandarUsuario.ingresarPuesto(nombre);
                 break;
             case 2:
-                llamarBitacora2.ingresoBitacora(nombre,"1900", "UPD");
-                mandarUsuario.modificarPuesto(nombre);
-                break;
-            case 3:
                 llamarBitacora2.ingresoBitacora(nombre,"1900", "REA");
                 mandarUsuario.visualizarPuesto(nombre);
+                break;
+            case 3:
+                llamarBitacora2.ingresoBitacora(nombre,"1900", "SEA");
+                mandarUsuario.buscarPuesto(nombre);
                 break;
             case 4:
                 break;
@@ -205,4 +203,76 @@ void Administracion::puestos(string n)
                 cin.get();
         }
     }while(choice!= 4);
+}
+void Administracion::planilla()
+{
+    int choice;
+    do {
+	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre << "\n\n";
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF -  Planilla - 2000 |"<<endl;
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
+	cout<<"\t\t\t 1. Visualizar planilla "<<endl;
+	cout<<"\t\t\t 2. Buscar empleado en planilla "<<endl;
+	cout<<"\t\t\t 3. Retornar menu anterior"<<endl;
+    cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tOpcion a escoger: 1-2-3 "<<endl;
+	cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa tu Opcion: ";
+    cin>>choice;
+
+        switch(choice)
+        {
+            case 1:
+                llamarBitacora2.ingresoBitacora(nombre,"2000", "REA");
+                llamarFP.leerPlanilla(nombre);
+                break;
+            case 2:
+                llamarBitacora2.ingresoBitacora(nombre,"2000", "SEA");
+                llamarFP.buscarPlanilla(nombre);
+                break;
+            case 3:
+                break;
+            default:
+                cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
+                cin.get();
+        }
+    }while(choice!=3);
+}
+void Administracion::pagos()
+{
+    int choice;
+    do {
+	system("cls");
+	cout << "\n\t\t\t Usuario: " << nombre << "\n\n";
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
+	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL STAFF -  pagos - 2100 |"<<endl;
+	cout<<"\t\t\t----------------------------------------------------"<<endl;
+	cout<<"\t\t\t 1. Imprimir boleta de pago "<<endl;
+	cout<<"\t\t\t 2. Bitacora de pagos "<<endl;
+	cout<<"\t\t\t 3. Retornar menu anterior"<<endl;
+    cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tOpcion a escoger: 1-2-3 "<<endl;
+	cout<<"\t\t\t--------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa tu Opcion: ";
+    cin>>choice;
+
+        switch(choice)
+        {
+            case 1:
+                llamarBitacora2.ingresoBitacora(nombre,"2100", "PRI");
+                llamarFP.imprimirPlanilla(nombre);
+                break;
+            case 2:
+                llamarBitacora2.ingresoBitacora(nombre,"2100", "REA");
+                llamarFP.leerBitacoraPagos(nombre);
+                break;
+            case 3:
+                break;
+            default:
+                cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
+                cin.get();
+        }
+    }while(choice!=3);
 }

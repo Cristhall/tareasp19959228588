@@ -10,11 +10,11 @@ class Aplicaciones
 		string nombre2;
 	public:
 		void menu(string n);
-		void insertar(string n);
-		void desplegar(string n);
-		void modificar(string n);
-		void buscar(string n);
-		void borrar(string n);
+		void insertar();
+		void desplegar();
+		void modificar();
+		void buscar();
+		void borrar();
 };
 
 #endif // APLICACIONES_H
