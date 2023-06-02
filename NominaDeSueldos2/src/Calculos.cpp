@@ -7,13 +7,10 @@ using namespace std;
 
 void Calculos::calculoSueldo(string i, string n, string p)
 {
-    fstream file, file1;
+    fstream file;
     puesto2 = p;
     id = i;
     nombre = n;
-    file1.open("PuestosEmpleados.txt", ios::app | ios::out);
-    file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< puesto2 << "\n";
-    file1.close();
     file.open("PuestoDeTrabajo.txt", ios::in);
     file >> puesto >> salarioBase;
     while(!file.eof())
@@ -69,3 +66,4 @@ void Calculos::verPago(int s)
     file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< hTrabajadas <<std::left<<std::setw(15)<< montoHTr <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
     file1.close();
 }
+

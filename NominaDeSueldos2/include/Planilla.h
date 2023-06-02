@@ -9,6 +9,7 @@ class Planilla
         void leerPlanilla(string n);
         void buscarPlanilla(string n);
         void modificarPlanilla(string n);
+        void modificarDPPlanilla(string i, string n);
 
     private:
         int salario, bonificacion, hTrabajadas, hLaboradas;

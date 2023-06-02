@@ -12,6 +12,7 @@ void Planilla::leerPlanilla(string n)
 	fstream file;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Planilla--------------------------"<<endl;
+	cout<<"\n\n\t"<<"Id"<<"\tNombre"<<"\t\tSalario"<<"\tBonificacion"<<"\tHTrabajadas"<<"\tMontoPorHoras"<<"\tIGSS"<<"\tISR"<<"\tSalarioTotal\n";
 	file.open("PlanillaDeSueldos.txt",ios::in);
 	if(!file)
 	{
@@ -24,15 +25,7 @@ void Planilla::leerPlanilla(string n)
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\n\n\t\t\t Id              :  "<<id<<endl;
-            cout<<"\t\t\t Nombre          :  "<<nombre<<endl;
-            cout<<"\t\t\t Salario Base    :  Q"<<salario<<endl;
-            cout<<"\t\t\t Bonificacion    :  Q"<<bonificacion<<endl;
-            cout<<"\t\t\t Horas laboradas :  "<<hTrabajadas<<endl;
-            cout<<"\t\t\t Monto por horas :  Q"<<montoHTr<<endl;
-            cout<<"\t\t\t IGSS            :  Q"<<igss<<endl;
-            cout<<"\t\t\t ISR             :  Q"<<isr<<endl;
-            cout<<"\t\t\t Salario Total   :  Q"<<salarioTotal<<endl;
+			cout<<"\n\t"<<id<<"\t"<<nombre<<"\t\t"<<salario<<"\t\t"<<bonificacion<<"\t\t"<<hTrabajadas<<"\t\t"<<montoHTr<<"\t"<<igss<<"\t"<<isr<<"\t"<<salarioTotal;
 			file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
 		}
 		if(total==0)
@@ -41,6 +34,7 @@ void Planilla::leerPlanilla(string n)
 		}
 	}
 	file.close();
+	cout<<endl<<endl;
 	system("pause");
 }
 void Planilla::buscarPlanilla(string n)
@@ -150,4 +144,34 @@ void Planilla::modificarPlanilla(string n)
     rename("Record.txt","PlanillaDeSueldos.txt");
     system("pause");
 }
+void Planilla::modificarDPPlanilla(string i, string n)
+{
+	fstream file,file1;
+	string participant_id, nombre3;
+	int found=0;
+	file.open("PlanillaDeSueldos.txt",ios::in);
+	participant_id = i;
+	nombre3 = n;
+    file1.open("Record.txt",ios::app | ios::out);
+    file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
+    while(!file.eof())
+    {
+        if(participant_id!=id)
+        {
+         file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< hTrabajadas <<std::left<<std::setw(15)<< montoHTr <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
+        }
+        else
+        {
+            id = participant_id;
+            nombre = nombre3;
+            file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< hTrabajadas <<std::left<<std::setw(15)<< montoHTr <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
+            found++;
+        }
+        file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
 
+    }
+    file1.close();
+    file.close();
+    remove("PlanillaDeSueldos.txt");
+    rename("Record.txt","PlanillaDeSueldos.txt");
+}

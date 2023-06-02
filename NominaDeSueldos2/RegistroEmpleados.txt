@@ -1,3 +1,1 @@
-001            prueba         250            existe         contador       
-002            prueba2        120            existe         secretaria     
-003            prueba3        150            existe         contador       
+001            valery         890            existe         contador       

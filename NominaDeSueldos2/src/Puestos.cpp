@@ -29,6 +29,7 @@ void Puestos::visualizarPuesto(string n)
 	int total=0;
 	cout<<"\n----------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------Tabla de Detalles de Puestos ----------------------------------------------"<<endl;
+	cout<<"\n\tPuesto" <<setw(15)<< "Monto";
 	file.open("PuestoDeTrabajo.txt",ios::in);
 	if(!file)
 	{
@@ -41,8 +42,7 @@ void Puestos::visualizarPuesto(string n)
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\n\n\t\t\tNombre Puesto  : "<<puesto<<endl;
-			cout<<"\t\t\tSalario Base       : "<<salarioBase<<endl;
+			cout<<"\n\t"<<puesto<<"\t"<<salarioBase;
 			file >> puesto >> salarioBase;
 		}
 		if(total==0)

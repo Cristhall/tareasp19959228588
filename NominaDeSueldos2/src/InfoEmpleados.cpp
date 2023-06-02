@@ -1,13 +1,15 @@
 #include "InfoEmpleados.h"
 #include "Bitacora.h"
 #include "Calculos.h"
+#include "Planilla.h"
 #include <conio.h>
 #include <iomanip>
 #include <iostream>
 #include <fstream>
 using namespace std;
 Bitacora llamarBitacora5;
-Calculos mandarSueldo;
+Calculos mandarInformacion;
+Planilla mandarParametros;
 void InfoEmpleados::menu(string n)
 {
     nombre2 = n;
@@ -89,7 +91,7 @@ void InfoEmpleados::insertar()
     file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
     cout << endl;
     system("pause");
-    mandarSueldo.calculoSueldo(id, nombre, puesto);
+    mandarInformacion.calculoSueldo(id, nombre, puesto);
     file.close();
 }
 void InfoEmpleados::desplegar()
@@ -99,6 +101,7 @@ void InfoEmpleados::desplegar()
 	fstream file;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Personas -------------------------"<<endl;
+	cout<<"\n\n\tId\tNombre\t\tTelefono\tDireccion\tPuesto\n\n";
 	file.open("RegistroEmpleados.txt",ios::in);
 	if(!file)
 	{
@@ -111,11 +114,7 @@ void InfoEmpleados::desplegar()
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\n\n\t\t\t Id Persona    : "<<id<<endl;
-			cout<<"\t\t\t Nombre Persona    : "<<nombre<<endl;
-			cout<<"\t\t\t Telefono Persona  : "<<telefono<<endl;
-			cout<<"\t\t\t Direccion Persona : "<<direccion<<endl;
-			cout<<"\t\t\t Puesto Persona    : "<<puesto<<endl;
+			cout<<"\t"<<id<<"\t"<<nombre<<"\t\t"<<telefono<<"\t\t"<<direccion<<"\t\t"<<puesto<<endl;
 			file >> id >> nombre >> telefono >> direccion >> puesto;
 		}
 		if(total==0)
@@ -150,30 +149,35 @@ void InfoEmpleados::modificar()
 			if(participant_id!=id)
 			{
 			 file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
-			}
+            }
 			else
 			{
-				cout<<"\t\t\tIngrese Id Persona        : ";
-				cin>>id;
-				cout<<"\t\t\tIngrese Nombre Persona    : ";
+				cout<<"\t\t\tId de la persona          : "<<id;
+				cout<<"\n\t\t\tIngrese Nombre Persona   : ";
 				cin>>nombre;
 				cout<<"\t\t\tIngrese Telefono Persona  : ";
 				cin>>telefono;
 				cout<<"\t\t\tIngrese Direccion Persona : ";
 				cin>>direccion;
-				cout<<"\t\t\tIngrese Puesto Persona    : ";
-				cin>>puesto;
+				cout<<"\t\t\tPuesto persona(NO ACTIVO) : "<<puesto;
 				file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< telefono <<std::left<<std::setw(15)<< direccion <<std::left<<std::setw(15)<< puesto << "\n";
 				found++;
 			}
 			file >> id >> nombre >> telefono >> direccion >> puesto;
 
 		}
+		if(found==0)
+        {
+            cout<<"\n\t\tEmpleado no encontrado..."<<endl;
+        }
 		file1.close();
 		file.close();
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
+	mandarParametros.modificarDPPlanilla(id, nombre);
+	cout<<endl;
+	system("pause");
 }
 void InfoEmpleados::buscar()
 {
@@ -256,4 +260,5 @@ void InfoEmpleados::borrar()
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
+	system("pause");
 }

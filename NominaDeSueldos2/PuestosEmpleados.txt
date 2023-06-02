@@ -1,3 +1,0 @@
-001            prueba         contador       
-002            prueba2        secretaria     
-003            prueba3        contador       

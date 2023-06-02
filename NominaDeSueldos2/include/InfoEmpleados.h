@@ -8,6 +8,10 @@ class InfoEmpleados
     private:
 		string id, nombre,telefono,direccion,puesto;
 		string nombre2;
+		//variables para cambio en planilla de sueldos
+		int salario, bonificacion, hTrabajadas;
+		double igss, isr, montoHTr, salarioTotal;
+
 	public:
 		void menu(string n);
 		void insertar();

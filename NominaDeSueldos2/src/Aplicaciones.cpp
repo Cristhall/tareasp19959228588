@@ -92,6 +92,7 @@ void Aplicaciones::desplegar()
 	int total=0;
 	cout<<"\n-------------------------Tabla de Detalles de Aplicaciones -------------------------"<<endl;
 	file.open("Aplicaciones.txt",ios::in);
+	cout<<"\n\n\tId\tAplicacion\tEstado\n\n";
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay información...";
@@ -103,9 +104,7 @@ void Aplicaciones::desplegar()
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\n\n\t\t\t Id Aplicacion: "<<id<<endl;
-			cout<<"\t\t\t Nombre Aplicacion: "<<nombre<<endl;
-			cout<<"\t\t\t Estado Aplicacion: "<<estado<<endl;
+			cout<<"\t"<<id<<"\t"<<nombre<<"\t"<<estado<<endl;
 			file >> id >> nombre >> estado;
 		}
 		if(total==0)
