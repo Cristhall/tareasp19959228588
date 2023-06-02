@@ -175,3 +175,87 @@ void Planilla::modificarDPPlanilla(string i, string n)
     remove("PlanillaDeSueldos.txt");
     rename("Record.txt","PlanillaDeSueldos.txt");
 }
+void Planilla::borrarPlanilla(string i)
+{
+	fstream file,file1;
+	string participant_id;
+	participant_id = i;
+	int found=0;
+	file.open("PlanillaDeSueldos.txt",ios::in);
+    file1.open("Record.txt",ios::app | ios::out);
+    file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
+    while(!file.eof())
+    {
+        if(participant_id!= id)
+        {
+            file1<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< salario <<std::left<<std::setw(15)<< bonificacion <<std::left<<std::setw(15)<< hTrabajadas <<std::left<<std::setw(15)<< montoHTr <<std::left<<std::setw(15)<< igss <<std::left<<std::setw(15)<< isr <<std::left<<std::setw(15)<< salarioTotal << "\n";
+        }
+        else
+        {
+            found++;
+            cout << "\n\t\t\tBorrado de informacion exitoso";
+        }
+        file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
+    }
+    file1.close();
+    file.close();
+    remove("PlanillaDeSueldos.txt");
+    rename("Record.txt","PlanillaDeSueldos.txt");
+}
+void Planilla::buscarpago()
+{
+    system("cls");
+    //nombre2 = n;
+	//cout << "\n\t\t\t Usuario: " << nombre2 << "\n\n";
+	fstream file;
+	int found=0;
+	file.open("PlanillaDeSueldos.txt",ios::in);
+	if(!file)
+	{
+		cout<<"\n-------------------------Datos de la Planilla buscada------------------------"<<endl;
+		cout<<"\n\t\t\tNo hay informacion...";
+	}
+	else
+	{
+		string idem;
+		cout<<"\n-------------------------Datos de la Planilla buscada------------------------"<<endl;
+		cout<<"\nIngrese Id del empleado que quiere buscar: ";
+		cin>> idem;
+		file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
+		while(!file.eof())
+		{
+			if(idem==id)
+			{
+			    system("cls");
+			    cout<<"\n\t\t\t------------------------- Recibo de Pago ------------------------"<<endl;
+			    cout<<" "<<endl;
+				cout<<"\n\n\t\t\t Id              :  "<<id<<endl;
+                cout<<"\t\t\t Nombre          :  "<<nombre<<endl;
+                cout<<"\t\t\t Salario Base    :  Q"<<salario<<endl;
+                cout<<"\t\t\t Bonificacion    :  Q"<<bonificacion<<endl;
+                cout<<"\t\t\t Horas laboradas :  "<<hTrabajadas<<endl;
+                cout<<"\t\t\t Monto por horas :  Q"<<montoHTr<<endl;
+                cout<<"\t\t\t IGSS            :  Q"<<igss<<endl;
+                cout<<"\t\t\t ISR             :  Q"<<isr<<endl;
+                cout<<"\t\t\t Salario Total   :  Q"<<salarioTotal<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<"\t\t\t | Recibe conforme |  f:                     "<<endl;
+                cout<<"\t\t\t                   _________________________"<<endl;
+                cout<<"\t\t\t                           | "<< nombre << " |" <<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+				found++;
+			}
+			file >> id >> nombre >> salario >> bonificacion >> hTrabajadas >> montoHTr >> igss >> isr >> salarioTotal;
+		}
+		if(found==0)
+		{
+			cout<<"\n\t\t\t Planilla no encontrada...";
+		}
+		file.close();
+	}
+	system("pause");
+}

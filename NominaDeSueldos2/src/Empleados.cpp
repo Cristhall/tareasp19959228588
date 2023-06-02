@@ -1,10 +1,15 @@
 #include "Empleados.h"
 #include "Usuario.h"
 #include "Bitacora.h"
+#include "Planilla.h"
+#include "InfoEmpleados.h"
 #include <ctime>
 #include <fstream>
 #include <iomanip>
 Bitacora llamarBitacora3;
+Planilla pagoempleado;
+InfoEmpleados verinfo;
+
 void Empleados::menuGeneralEmpleados(string n)
 {
     system("cls");
@@ -56,10 +61,9 @@ void Empleados::infopersonalEmpleados(string n)
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados - Informacion personal laboral - 900 |"<<endl;
 	cout<<"\t\t\t--------------------------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Informacion Personal "<<endl;
-	cout<<"\t\t\t 2. Puesto en la empresa "<<endl;
-	cout<<"\t\t\t 3. Procesos Diciplinarios "<<endl;
-	cout<<"\t\t\t 4. Rendimiento "<<endl;
-	cout<<"\t\t\t 5. Retornar menu anterior"<<endl;
+	cout<<"\t\t\t 2. Procesos Diciplinarios "<<endl;
+	cout<<"\t\t\t 3. Rendimiento "<<endl;
+	cout<<"\t\t\t 4. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5 "<<endl;
 	cout<<"\t\t\t--------------------------------------------"<<endl;
@@ -70,23 +74,25 @@ void Empleados::infopersonalEmpleados(string n)
         {
             case 1:
                 llamarBitacora3.ingresoBitacora(nombre,"900", "RIP");
+                verinfo.buscar();
                 break;
             case 2:
                 llamarBitacora3.ingresoBitacora(nombre,"900", "RPE");
+                cout << "\n\t\t\tDebe solicitarlo personalmente en oficinas  " << endl;
+                system("pause");
                 break;
             case 3:
                 llamarBitacora3.ingresoBitacora(nombre,"900", "RPD");
+                cout << "\n\t\t\tinformacion no disponible por el momento " << endl;
+                system("pause");
                 break;
             case 4:
-                llamarBitacora3.ingresoBitacora(nombre,"900", "RR");
-                break;
-            case 5:
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
                 cin.get();
         }
-    }while(choice!= 5);
+    }while(choice!= 4);
 }
 void Empleados::procesoEmpleados(string n)
 {
@@ -98,10 +104,9 @@ void Empleados::procesoEmpleados(string n)
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Proceso - 1000  |"<<endl;
 	cout<<"\t\t\t---------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Solicitar nuevo puesto "<<endl;
-	cout<<"\t\t\t 2. Revisar procesos diciplinarios "<<endl;
-	cout<<"\t\t\t 3. Solicitar horas extras "<<endl;
-	cout<<"\t\t\t 4. Servicio de ayuda "<<endl;
-	cout<<"\t\t\t 5. Retornar menu anterior"<<endl;
+	cout<<"\t\t\t 2. Solicitar horas extras "<<endl;
+	cout<<"\t\t\t 3. Servicio de ayuda "<<endl;
+	cout<<"\t\t\t 4. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5 "<<endl;
 	cout<<"\t\t\t--------------------------------------------"<<endl;
@@ -112,23 +117,26 @@ void Empleados::procesoEmpleados(string n)
         {
             case 1:
                 llamarBitacora3.ingresoBitacora(nombre,"1000", "SNP");
+                cout << "\n\t\t\tDebe solicitarlo personalmente en oficinas  " << endl;
+                system("pause");
                 break;
             case 2:
                 llamarBitacora3.ingresoBitacora(nombre,"1000", "RPD");
+                cout << "\n\t\t\tNo hay horas extras disponibles por el momento  " << endl;
+                system("pause");
                 break;
             case 3:
                 llamarBitacora3.ingresoBitacora(nombre,"1000", "SHE");
+                cout << "\n\t\t\t| Ext. 62541  | Oficina central - 704 |" << endl;
+                system("pause");
                 break;
             case 4:
-                llamarBitacora3.ingresoBitacora(nombre,"1000", "SOS");
-                break;
-            case 5:
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
                 cin.get();
         }
-    }while(choice!= 5);
+    }while(choice!= 4);
 }
 void Empleados::informesEmpleados(string n)
 {
@@ -140,10 +148,8 @@ void Empleados::informesEmpleados(string n)
 	cout<<"\t\t\t |   PROGRAMA EMPRESARIAL Empleados -   Informes   - 1100|"<<endl;
 	cout<<"\t\t\t----------------------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. visualizar nomina de pago "<<endl;
-	cout<<"\t\t\t 2. visualizar pagos extras "<<endl;
-	cout<<"\t\t\t 3. Visualizar horas laboradas "<<endl;
-	cout<<"\t\t\t 4. Visualizar descuentos aplicados "<<endl;
-	cout<<"\t\t\t 5. Retornar menu anterior"<<endl;
+	cout<<"\t\t\t 2. Visualizar descuentos aplicados "<<endl;
+	cout<<"\t\t\t 3. Retornar menu anterior"<<endl;
     cout<<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:1-2-3-4-5 "<<endl;
 	cout<<"\t\t\t--------------------------------------------"<<endl;
@@ -154,21 +160,19 @@ void Empleados::informesEmpleados(string n)
         {
             case 1:
                 llamarBitacora3.ingresoBitacora(nombre,"1100", "VNP");
+                pagoempleado.buscarpago();
                 break;
             case 2:
                 llamarBitacora3.ingresoBitacora(nombre,"1100", "VPE");
+                cout <<"\t\t\tDescuentos aplicados: " << endl;
+                cout <<"\n\t\t\t descuentos segun codigo de trabajo de Guatemala |IGSS, ISR, IRTRA| no hay descuentos extras" << endl;
+                system("pause");
                 break;
             case 3:
-                llamarBitacora3.ingresoBitacora(nombre,"1100", "VHL");
-                break;
-            case 4:
-                llamarBitacora3.ingresoBitacora(nombre,"1100", "VDA");
-                break;
-            case 5:
                 break;
             default:
                 cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
                 cin.get();
         }
-    }while(choice!= 5);
+    }while(choice!= 3);
 }

@@ -12,10 +12,12 @@
 1684705740 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\usuario.h
 	<iostream>
 
-1685400934 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\empleados.cpp
+1685741742 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\empleados.cpp
 	"Empleados.h"
 	"Usuario.h"
 	"Bitacora.h"
+	"Planilla.h"
+	"InfoEmpleados.h"
 	<ctime>
 	<fstream>
 	<iomanip>
@@ -77,7 +79,7 @@
 1685736308 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\infoempleados.h
 	<iostream>
 
-1685740384 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\infoempleados.cpp
+1685741408 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\infoempleados.cpp
 	"InfoEmpleados.h"
 	"Bitacora.h"
 	"Calculos.h"
@@ -112,12 +114,12 @@
 	<iomanip>
 	<fstream>
 
-1685739921 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\planilla.cpp
+1685741742 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\planilla.cpp
 	"Planilla.h"
 	<iostream>
 	<iomanip>
 	<fstream>
 
-1685739921 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\planilla.h
+1685741742 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\planilla.h
 	<iostream>
 

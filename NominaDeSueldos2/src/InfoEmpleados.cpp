@@ -175,6 +175,7 @@ void InfoEmpleados::modificar()
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
+	id = participant_id;
 	mandarParametros.modificarDPPlanilla(id, nombre);
 	cout<<endl;
 	system("pause");
@@ -247,7 +248,6 @@ void InfoEmpleados::borrar()
 			else
 			{
 				found++;
-				cout << "\n\t\t\tBorrado de informacion exitoso";
 			}
 			file >> id >> nombre >> telefono >> direccion >> puesto;
 		}
@@ -260,5 +260,8 @@ void InfoEmpleados::borrar()
 		remove("RegistroEmpleados.txt");
 		rename("Record.txt","RegistroEmpleados.txt");
 	}
+	id = participant_id;
+	mandarParametros.borrarPlanilla(id);
+	cout<<endl;
 	system("pause");
 }
