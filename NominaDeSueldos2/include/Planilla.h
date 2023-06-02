@@ -8,13 +8,12 @@ class Planilla
     public:
         void leerPlanilla(string n);
         void buscarPlanilla(string n);
-        void imprimirPlanilla(string n);
-        void leerBitacoraPagos(string n);
+        void modificarPlanilla(string n);
 
     private:
-        int salario, bonificacion, hTrabajadas;
+        int salario, bonificacion, hTrabajadas, hLaboradas;
         double montoHTr, igss, isr, salarioTotal;
-        string id, nombre, nombre2, fecha;
+        string id, nombre, nombre2;
 };
 
 #endif // PLANILLA_H

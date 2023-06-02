@@ -26,7 +26,7 @@
 1685401254 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\bitacora.h
 	<iostream>
 
-1685679489 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\bitacora.cpp
+1685679520 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\bitacora.cpp
 	"Bitacora.h"
 	<iostream>
 	<fstream>
@@ -35,7 +35,7 @@
 	<stdlib.h>
 	<iomanip>
 
-1685677910 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\administracion.cpp
+1685684307 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\administracion.cpp
 	"Administracion.h"
 	"Usuario.h"
 	"Bitacora.h"
@@ -111,12 +111,12 @@
 	<iomanip>
 	<fstream>
 
-1685678993 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\planilla.cpp
+1685684765 source:c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\src\planilla.cpp
 	"Planilla.h"
 	<iostream>
 	<iomanip>
 	<fstream>
 
-1685664949 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\planilla.h
+1685683944 c:\users\cristhall\onedrive\escritorio\universidad\tercer semestre\programación_i\tareasp19959228588\nominadesueldos2\include\planilla.h
 	<iostream>
 
